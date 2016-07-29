@@ -1,0 +1,263 @@
+/*common*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #333;
+}
+
+/*icon*/
+@font-face {
+  font-family: 'iconfont';
+  src: url("//at.alicdn.com/t/font_1469707467_2539842.eot"), url("//at.alicdn.com/t/font_1469707467_2539842.woff") format("woff"), url("//at.alicdn.com/t/font_1469707467_2539842.ttf") format("truetype"), url("//at.alicdn.com/t/font_1469707467_2539842.svg#iconfont") format("svg");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+}
+
+.icon-hot:before {
+  content: "\e629";
+}
+
+.icon-share-full:before {
+  content: "\e62a";
+}
+
+.icon-swing:before {
+  content: "\e62b";
+}
+
+.icon-comments:before {
+  content: "\e62c";
+}
+
+.icon-shut-down:before {
+  content: "\e62d";
+}
+
+.icon-phone-book:before {
+  content: "\e60d";
+}
+
+.icon-delete:before {
+  content: "\e60f";
+}
+
+.icon-edit:before {
+  content: "\e610";
+}
+
+.icon-eye:before {
+  content: "\e612";
+}
+
+.icon-share:before {
+  content: "\e613";
+}
+
+.icon-setting:before {
+  content: "\e614";
+}
+
+.icon-close:before {
+  content: "\e615";
+}
+
+.icon-close-full:before {
+  content: "\e616";
+}
+
+.icon-heart:before {
+  content: "\e617";
+}
+
+.icon-heart-full:before {
+  content: "\e618";
+}
+
+.icon-tags:before {
+  content: "\e619";
+}
+
+.icon-change:before {
+  content: "\e61a";
+}
+
+.icon-password:before {
+  content: "\e61b";
+}
+
+.icon-close-big:before {
+  content: "\e61c";
+}
+
+.icon-time:before {
+  content: "\e60e";
+}
+
+.icon-position:before {
+  content: "\e611";
+}
+
+.icon-position-full:before {
+  content: "\e61f";
+}
+
+.icon-eye-full:before {
+  content: "\e620";
+}
+
+.icon-scan:before {
+  content: "\e621";
+}
+
+.icon-star:before {
+  content: "\e622";
+}
+
+.icon-star-full:before {
+  content: "\e623";
+}
+
+.icon-comment:before {
+  content: "\e624";
+}
+
+.icon-eye-hidden:before {
+  content: "\e625";
+}
+
+.icon-email:before {
+  content: "\e626";
+}
+
+.icon-home-full:before {
+  content: "\e627";
+}
+
+.icon-home:before {
+  content: "\e628";
+}
+
+.icon-cart-full:before {
+  content: "\e601";
+}
+
+.icon-cart:before {
+  content: "\e602";
+}
+
+.icon-user-full:before {
+  content: "\e603";
+}
+
+.icon-user:before {
+  content: "\e604";
+}
+
+.icon-form:before {
+  content: "\e605";
+}
+
+.icon-horn:before {
+  content: "\e606";
+}
+
+.icon-search:before {
+  content: "\e607";
+}
+
+.icon-left:before {
+  content: "\e600";
+}
+
+.icon-more:before {
+  content: "\e608";
+}
+
+.icon-more-vertical:before {
+  content: "\e60b";
+}
+
+.icon-right:before {
+  content: "\e60c";
+}
+
+.icon-picture-copy:before {
+  content: "\e61d";
+}
+
+.icon-refurbish:before {
+  content: "\e61e";
+}
+
+/*header*/
+.om-header {
+  position: relative;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+}
+.om-header .om-header-title {
+  display: block;
+  padding: 0 20%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.om-header a.om-header-left {
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+.om-header a.om-header-right {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.om-header a.om-header-left, .om-header a.om-header-right {
+  min-width: 40px;
+  height: 49px;
+  text-align: center;
+}
+.om-header a.om-header-left .iconfont, .om-header a.om-header-right .iconfont {
+  font-size: 18px;
+}
+.om-header a.om-header-left .om-header-nav-btn, .om-header a.om-header-right .om-header-nav-btn {
+  padding: 0 3px;
+  font-size: 14px;
+}
+
+.om-header-default {
+  background-color: #f78a24;
+  color: #fff;
+}
+.om-header-default a.om-header-left, .om-header-default a.om-header-right {
+  color: #ffffff;
+}
+
+.am-header-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/*# sourceMappingURL=omui1.css.map */
