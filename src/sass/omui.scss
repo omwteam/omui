@@ -14,6 +14,70 @@ a:link,a:visited,a:hover,a:active{
     color: #333;
 }
 
+/*grid*/
+.om-grid-row{
+    margin: 0 auto;
+    width: 100%;
+    [class*=om-grid-col-]{
+        position: relative;
+        float: left;
+    }
+    [class*=om-grid-equal-]{
+        height: 0;
+        overflow: hidden;
+    }
+    .om-grid-col-10{
+        width: 10%;
+    }
+    .om-grid-col-20{
+        width: 20%;
+    }
+    .om-grid-col-25{
+        width: 25%;
+    }
+    .om-grid-col-33{
+        width: 33.33333333%;
+    }
+    .om-grid-col-50{
+        width: 50%;
+    }
+    .om-grid-col-66{
+        width: 66.66666666%;
+    }
+    .om-grid-col-75{
+        width: 75%;
+    }
+    .om-grid-col-80{
+        width: 80%;
+    }
+    .om-grid-col-90{
+        width: 90%;
+    }
+    .om-grid-equal-25{
+        padding-bottom: 25%;
+    }
+    .om-grid-equal-33{
+        padding-bottom: 33%;
+    }
+    .om-grid-equal-50{
+        padding-bottom: 50%;
+    }
+    .om-grid-equal-66{
+        padding-bottom: 66%;
+    }
+}
+.om-grid-row:after,.om-grid-row:before {
+    content: " ";
+    display: table
+}
+
+.om-grid-row:after {
+    clear: both
+}
+.om-grid-center{
+    text-align: center;
+}
+
 /*icon*/
 @font-face {
     font-family: 'iconfont';
@@ -123,10 +187,30 @@ a:link,a:visited,a:hover,a:active{
         color: #ffffff;
     }
 }
-.am-header-fixed{
+.om-header-fixed{
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 1000;
+}
+.om-header~.om-container{
+    padding-top: 50px;
+}
+
+/*footer*/
+.om-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    z-index: 999;
+    .om-footer-on{
+        color: $color;
+    }
+}
+.om-footer~.om-container{
+    padding-bottom: 57px;
 }
