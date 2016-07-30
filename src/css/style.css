@@ -20,11 +20,10 @@ body {
 .om-container [class*=om-grid-col-] {
   height: 30px;
   line-height: 30px;
-  background: #888;
+  background: #dcdcdc;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   margin-bottom: 2px;
-  color: #fff;
 }
 .om-container [class*=om-grid-equal-] {
   border: 0;
@@ -44,7 +43,7 @@ body {
 }
 .om-container .om-title {
   margin: 10px 0;
-  padding-left: 15px;
+  padding-left: 10px;
   border-left: 3px solid #f78a24;
 }
 
