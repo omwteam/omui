@@ -6,6 +6,22 @@ omui，一个专注移动web开发的框架。
 
 ### 1.文本 ###
 
+文本大小
+
+	<h1>h1,18px</h1>
+    <h2>h2,17px</h2>
+    <h3>h3,16px</h3>
+    <h4>h4,15px</h4>
+    <h5>h5,14px</h5>
+    <h6>h6,12px</h6>
+
+文本对齐
+
+	<p class="om-txt-left">左对齐</p>
+    <p class="om-txt-right">右对齐</p>
+    <p class="om-txt-center">居中对齐</p>
+    <p class="om-txt-justify">两端对齐</p>
+
 ### 2.图标 ###
 
 	//关闭
@@ -174,3 +190,31 @@ omui，一个专注移动web开发的框架。
             <i class="iconfont icon-home"></i>
         </a>
     </header>
+
+### 2.底部导航 ###
+
+### 3.标签 ###
+
+大标签
+
+	<span class="om-tags">刘德华</span>
+    <span class="om-tags">周杰伦</span>
+
+小标签
+
+	<span class="om-tags-s">打球</span>
+    <span class="om-tags-s">唱歌</span>
+
+### 4.红点 ###
+
+小红点
+
+	<span class="om-reddot-s">刘德华</span>
+
+带数字红点
+
+	<span class="om-reddot-num">10</span>
+    
+红点在前
+
+	<span class="om-reddot-before">10</span>
