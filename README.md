@@ -218,3 +218,58 @@ omui，一个专注移动web开发的框架。
 红点在前
 
 	<span class="om-reddot-before">10</span>
+
+### 5.按钮 ###
+
+小按钮
+
+	<button class="om-btn-s">确定</button>
+    <button class="om-btn-s om-btn-default">确定</button>
+    <button class="om-btn-s om-btn-gray">取消</button>
+
+普通按钮
+
+	<button class="om-btn">确定</button>
+    <button class="om-btn om-btn-default">确定</button>
+    <button class="om-btn om-btn-gray">取消</button>
+
+大按钮
+
+	<button class="om-btn-b">确 定</button>
+    <button class="om-btn-b om-btn-default">确 定</button>
+    <button class="om-btn-b om-btn-gray">取消</button>
+
+### 6.表单 ###
+
+带label输入框
+
+	<div class="om-form om-form-label">
+        <label for="#">手机号</label>
+        <input type="text" class="om-form-input" value="13790461104"/>
+    </div>
+
+带关闭按钮输入框
+
+	<div class="om-form">
+        <input type="text" class="om-form-input" placeholder="请输入手机号"/>
+        <i class="iconfont icon-close-full"></i>
+    </div>
+
+带获取验证码按钮
+
+	<div class="om-form om-form-captcha">
+        <input type="text" class="om-form-input" placeholder="请输入验证码"/>
+        <i class="iconfont icon-close-full"></i>
+        <button class="om-btn-captcha">获取验证码</button>
+    </div>
+
+带边框和默认图标
+
+	<div class="om-form om-form-border">
+        <i class="iconfont icon-user-full"></i>
+        <input type="text" class="om-form-input" placeholder="请输入用户名"/>
+    </div>
+	<div class="om-form om-form-border">
+        <i class="iconfont icon-password"></i>
+        <input type="password" class="om-form-input" placeholder="请输入密码"/>
+    </div>

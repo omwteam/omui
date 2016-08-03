@@ -1,5 +1,4 @@
 $color:#f78a24;
-
 /*common*/
 *{
     padding:0;
@@ -8,12 +7,12 @@ $color:#f78a24;
     list-style: none;
 }
 a{
-    text-decoration: none
+    text-decoration: none;
+    &:link,&:visited,&:hover,&:active{
+        color: #333;
+    }
 }
-a:link,a:visited,a:hover,a:active{
-    color: #333;
-}
-button{
+button,input,label,select{
     -webkit-appearance: none;
     border:0;
     background: 0 0;
@@ -47,12 +46,12 @@ h6{font-size: 12px;}
 }
 .om-txt-justify{
     text-align: justify;
-}
-.om-txt-justify:after {
-    display: inline-block;
-    content: '';
-    width: 100%;
-    height: 0;
+    &:after {
+        display: inline-block;
+        content: '';
+        width: 100%;
+        height: 0;
+    }
 }
 /*grid*/
 .om-grid-row{
@@ -105,26 +104,24 @@ h6{font-size: 12px;}
     .om-grid-equal-66{
         padding-bottom: 66%;
     }
-}
-.om-grid-row:after,.om-grid-row:before {
-    content: " ";
-    display: table
-}
-
-.om-grid-row:after {
-    clear: both
+    &:after,&:before {
+        content: " ";
+        display: table
+    }
+    &:after {
+        clear: both
+    }
 }
 .om-grid-center{
     text-align: center;
 }
-
 /*icon*/
 @font-face {
     font-family: 'iconfont';
-    src: url('//at.alicdn.com/t/font_1469707467_2539842.eot'),
-    url('//at.alicdn.com/t/font_1469707467_2539842.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1469707467_2539842.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1469707467_2539842.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1470218198_0141077.eot'),
+    url('//at.alicdn.com/t/font_1470218198_0141077.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1470218198_0141077.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1470218198_0141077.svg#iconfont') format('svg');
 }
 .iconfont {
     font-family:"iconfont" !important;
@@ -168,6 +165,8 @@ h6{font-size: 12px;}
 .icon-cart-full:before { content: "\e601"; }
 .icon-cart:before { content: "\e602"; }
 .icon-user-full:before { content: "\e603"; }
+.icon-checkmark:before { content: "\e60a"; }
+.icon-checkmark-full:before { content: "\e609"; }
 .icon-user:before { content: "\e604"; }
 .icon-form:before { content: "\e605"; }
 .icon-horn:before { content: "\e606"; }
@@ -178,13 +177,11 @@ h6{font-size: 12px;}
 .icon-right:before { content: "\e60c"; }
 .icon-picture-copy:before { content: "\e61d"; }
 .icon-refurbish:before { content: "\e61e"; }
-
 /*layout*/
 .om-layout{
     padding:0 10px;
     margin-bottom: 10px;
 }
-
 /*header*/
 .om-header{
     position: relative;
@@ -221,7 +218,9 @@ h6{font-size: 12px;}
             font-size: 14px;
         }
     }
-
+    ~.om-container{
+        padding-top: 50px;
+    }
 }
 .om-header-default{
     background-color: $color;
@@ -237,10 +236,6 @@ h6{font-size: 12px;}
     width: 100%;
     z-index: 1000;
 }
-.om-header~.om-container{
-    padding-top: 50px;
-}
-
 /*footer*/
 .om-footer{
     position: fixed;
@@ -253,11 +248,10 @@ h6{font-size: 12px;}
     .om-footer-on{
         color: $color;
     }
+    ~.om-container{
+        padding-bottom: 57px;
+    }
 }
-.om-footer~.om-container{
-    padding-bottom: 57px;
-}
-
 /*tags*/
 .om-tags{
     display: inline-block;
@@ -274,21 +268,20 @@ h6{font-size: 12px;}
     color:#999;
     font-size: 14px;
 }
-
 /*red dot*/
 .om-reddot-s{
     position: relative;
     padding:0 5px;
-}
-.om-reddot-s:after{
-    position: absolute;
-    right: -4px;
-    top: -3px;
-    content:'';
-    width:8px;
-    height: 8px;
-    border-radius: 4px;
-    background: #f74c31;
+    &:after{
+        position: absolute;
+        right: -4px;
+        top: -3px;
+        content:'';
+        width:8px;
+        height: 8px;
+        border-radius: 4px;
+        background: #f74c31;
+    }
 }
 .om-reddot-num{
     position: absolute;
@@ -342,12 +335,135 @@ h6{font-size: 12px;}
     display: block;
     font-size: 17px;
 }
-.om-btn-s.om-btn-default,.om-btn.om-btn-default,.om-btn-b.om-btn-default{
-    background: $color;
-    border:1px solid $color;
-    color: #fff;
+.om-btn-s,.om-btn,.om-btn-b{
+    &.om-btn-default{
+        background: $color;
+        border:1px solid $color;
+        color: #fff;
+    }
+    &.om-btn-gray{
+        border:1px solid #dddddd;
+        color: #ccc;
+    }
 }
-.om-btn-s.om-btn-gray,.om-btn.om-btn-gray,.om-btn-b.om-btn-gray{
-    border:1px solid #dddddd;
-    color: #ccc;
+/*form*/
+.om-form{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    .om-form-input{
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+    }
+    .icon-close-full,.icon-close{
+        position: absolute;
+        right: 0;
+        top: 2px;
+        font-size: 20px;
+        color: #777;
+    }
+    &.om-form-label{
+        label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #999;
+        }
+        .om-form-input{
+            padding-left: 70px;
+        }
+    }
+    &.om-form-captcha{
+        .om-form-input{
+            width: 65%;
+        }
+        .om-btn-captcha{
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 30%;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 3px;
+            background: $color;
+            color: #fff;
+        }
+        .icon-close-full,.icon-close{
+            right:33%;
+        }
+    }
+    &.om-form-border{
+        margin-bottom: 10px;
+        .om-form-input{
+            height: 35px;
+            padding-left: 25px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        [class*=icon-]{
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            font-size: 17px;
+            color: #bbb;
+        }
+    }
+}
+.om-select{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    select{
+        width: 100%;
+        padding-right: 20px;
+        font-size: 14px;
+        color: #333;
+    }
+    &:after{
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        margin-top: -2px;
+        border-top: 6px solid;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        color: #a6a6a6;
+        content: "";
+    }
+    &.om-select-label{
+        label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #999;
+        }
+        select{
+            padding-left: 70px;
+        }
+    }
+}
+.om-select-group{
+    .om-select{
+        float: left;
+    }
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+    &.om-select-label{
+        position: relative;
+        padding-left: 70px;
+        line-height: 40px;
+        label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #999;
+        }
+    }
 }

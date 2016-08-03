@@ -9,12 +9,11 @@
 a {
   text-decoration: none;
 }
-
 a:link, a:visited, a:hover, a:active {
   color: #333;
 }
 
-button {
+button, input, label, select {
   -webkit-appearance: none;
   border: 0;
   background: 0 0;
@@ -74,7 +73,6 @@ h6 {
 .om-txt-justify {
   text-align: justify;
 }
-
 .om-txt-justify:after {
   display: inline-block;
   content: '';
@@ -134,12 +132,10 @@ h6 {
 .om-grid-row .om-grid-equal-66 {
   padding-bottom: 66%;
 }
-
 .om-grid-row:after, .om-grid-row:before {
   content: " ";
   display: table;
 }
-
 .om-grid-row:after {
   clear: both;
 }
@@ -151,7 +147,7 @@ h6 {
 /*icon*/
 @font-face {
   font-family: 'iconfont';
-  src: url("//at.alicdn.com/t/font_1469707467_2539842.eot"), url("//at.alicdn.com/t/font_1469707467_2539842.woff") format("woff"), url("//at.alicdn.com/t/font_1469707467_2539842.ttf") format("truetype"), url("//at.alicdn.com/t/font_1469707467_2539842.svg#iconfont") format("svg");
+  src: url("//at.alicdn.com/t/font_1470218198_0141077.eot"), url("//at.alicdn.com/t/font_1470218198_0141077.woff") format("woff"), url("//at.alicdn.com/t/font_1470218198_0141077.ttf") format("truetype"), url("//at.alicdn.com/t/font_1470218198_0141077.svg#iconfont") format("svg");
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -298,6 +294,14 @@ h6 {
   content: "\e603";
 }
 
+.icon-checkmark:before {
+  content: "\e60a";
+}
+
+.icon-checkmark-full:before {
+  content: "\e609";
+}
+
 .icon-user:before {
   content: "\e604";
 }
@@ -381,6 +385,9 @@ h6 {
   padding: 0 3px;
   font-size: 14px;
 }
+.om-header ~ .om-container {
+  padding-top: 50px;
+}
 
 .om-header-default {
   background-color: #f78a24;
@@ -398,10 +405,6 @@ h6 {
   z-index: 1000;
 }
 
-.om-header ~ .om-container {
-  padding-top: 50px;
-}
-
 /*footer*/
 .om-footer {
   position: fixed;
@@ -415,7 +418,6 @@ h6 {
 .om-footer .om-footer-on {
   color: #f78a24;
 }
-
 .om-footer ~ .om-container {
   padding-bottom: 57px;
 }
@@ -443,7 +445,6 @@ h6 {
   position: relative;
   padding: 0 5px;
 }
-
 .om-reddot-s:after {
   position: absolute;
   right: -4px;
@@ -517,10 +518,125 @@ h6 {
   border: 1px solid #f78a24;
   color: #fff;
 }
-
 .om-btn-s.om-btn-gray, .om-btn.om-btn-gray, .om-btn-b.om-btn-gray {
   border: 1px solid #dddddd;
   color: #ccc;
+}
+
+/*form*/
+.om-form {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+.om-form .om-form-input {
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+}
+.om-form .icon-close-full, .om-form .icon-close {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 20px;
+  color: #777;
+}
+.om-form.om-form-label label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #999;
+}
+.om-form.om-form-label .om-form-input {
+  padding-left: 70px;
+}
+.om-form.om-form-captcha .om-form-input {
+  width: 65%;
+}
+.om-form.om-form-captcha .om-btn-captcha {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 30%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 3px;
+  background: #f78a24;
+  color: #fff;
+}
+.om-form.om-form-captcha .icon-close-full, .om-form.om-form-captcha .icon-close {
+  right: 33%;
+}
+.om-form.om-form-border {
+  margin-bottom: 10px;
+}
+.om-form.om-form-border .om-form-input {
+  height: 35px;
+  padding-left: 25px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.om-form.om-form-border [class*=icon-] {
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  font-size: 17px;
+  color: #bbb;
+}
+
+.om-select {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+.om-select select {
+  width: 100%;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #333;
+}
+.om-select:after {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 6px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  color: #a6a6a6;
+  content: "";
+}
+.om-select.om-select-label label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #999;
+}
+.om-select.om-select-label select {
+  padding-left: 70px;
+}
+
+.om-select-group .om-select {
+  float: left;
+}
+.om-select-group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.om-select-group.om-select-label {
+  position: relative;
+  padding-left: 70px;
+  line-height: 40px;
+}
+.om-select-group.om-select-label label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #999;
 }
 
 /*# sourceMappingURL=omui.css.map */
