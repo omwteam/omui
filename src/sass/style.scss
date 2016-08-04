@@ -47,6 +47,14 @@ body{
         padding-left: 10px;
         border-left: 3px solid $color;
     }
+    &.om-form-box{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling : touch;
+    }
 }
 .om-footer{
     background: #f3f1f1;

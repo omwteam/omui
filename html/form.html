@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../src/css/style.css"/>
 </head>
 <body>
-<header class="om-header om-header-default om-header-fixed">
+<header class="om-header om-header-default">
     <a href="javascript:history.back()" class="om-header-left">
         <i class="iconfont icon-left"></i>
     </a>
@@ -34,7 +34,7 @@
         <a href="js.html" class="om-grid-col-33">js组件</a>
     </div>
 </footer>
-<section class="om-container">
+<section class="om-container om-form-box">
     <div class="om-title">输入框1</div>
     <div class="om-layout">
         <form action="#">
@@ -124,7 +124,24 @@
     </div>
     <div class="om-title">选择框</div>
     <div class="om-layout">
-
+        <div class="om-checkbox">
+            <input type="checkbox" id="checkbox1"/>
+            <span class="om-checkbox-icon"><i class="iconfont icon-checkmark-full"></i></span>
+            <label for="checkbox1">我同意服务条款</label>
+        </div>
+    </div>
+    <div class="om-title">单选框</div>
+    <div class="om-layout">
+        <div class="om-radio">
+            <input type="radio" name="radio" id="radio1" checked/>
+            <span class="om-radio-icon"><i></i></span>
+            <label for="radio1">我选择第一个</label>
+        </div>
+        <div class="om-radio">
+            <input type="radio" name="radio" id="radio2"/>
+            <span class="om-radio-icon"><i></i></span>
+            <label for="radio2">我选择第二个</label>
+        </div>
     </div>
 </section>
 </body>

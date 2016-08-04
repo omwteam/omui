@@ -329,3 +329,81 @@ table-cell布局
         <i class="iconfont icon-password"></i>
         <input type="password" class="om-form-input" placeholder="请输入密码"/>
     </div>
+
+下拉框
+
+	<div class="om-select">
+        <select>
+            <option value="">--选择姓名--</option>
+            <option value="刘德华">刘德华</option>
+            <option value="周杰伦">周杰伦</option>
+            <option value="林俊杰">林俊杰</option>
+        </select>
+    </div>
+
+带label下拉框
+
+	<div class="om-select om-select-label">
+        <label for="#">姓名</label>
+        <select>
+            <option value="刘德华">刘德华</option>
+            <option value="周杰伦">周杰伦</option>
+            <option value="林俊杰">林俊杰</option>
+        </select>
+    </div>
+
+下拉框组
+
+	<div class="om-select-group om-select-label">
+        <label for="#">日期</label>
+        <div class="om-select">
+            <select>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+        </div>
+        <div class="om-select">
+            <select>
+                <option value="05">05</option>
+                <option value="06">06</option>
+            </select>
+        </div>
+        <div class="om-select">
+            <select>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+    </div>
+
+选择框
+
+	<div class="om-checkbox">
+        <input type="checkbox" id="checkbox1"/>
+        <span class="om-checkbox-icon"><i class="iconfont icon-checkmark-full"></i></span>
+        <label for="checkbox1">我同意服务条款</label>
+    </div>
+
+单选框
+
+	<div class="om-radio">
+        <input type="radio" name="radio" id="radio1" checked/>
+        <span class="om-radio-icon"><i></i></span>
+        <label for="radio1">我选择第一个</label>
+    </div>
+    <div class="om-radio">
+        <input type="radio" name="radio" id="radio2"/>
+        <span class="om-radio-icon"><i></i></span>
+        <label for="radio2">我选择第二个</label>
+    </div>
+
+### 7.图片 ###
+
+响应式图片 max-width:100%
+
+	<img src="img.jpg" class="om-img"/>
+
+圆角图片
+
+	<img src="img2.jpg" class="om-img-radius"/>
+    <img src="img2.jpg" class="om-img-circle"/>
