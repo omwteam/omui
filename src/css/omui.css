@@ -17,6 +17,7 @@ button, input, label, select {
   -webkit-appearance: none;
   border: 0;
   background: 0 0;
+  font: inherit;
 }
 
 :focus {
@@ -70,14 +71,35 @@ h6 {
   text-align: center;
 }
 
-.om-txt-justify {
+.om-txt-justify-line {
   text-align: justify;
+  height: 25px;
 }
-.om-txt-justify:after {
+.om-txt-justify-line:after {
   display: inline-block;
   content: '';
   width: 100%;
   height: 0;
+}
+
+.om-txt-justify {
+  text-align: justify;
+}
+
+.om-color-default {
+  color: #f78a24;
+}
+
+.om-color-red {
+  color: #f74c31;
+}
+
+.om-color-blue {
+  color: #00a5e0;
+}
+
+.om-color-gray {
+  color: #aaa;
 }
 
 /*grid*/
@@ -344,8 +366,50 @@ h6 {
 
 /*layout*/
 .om-layout {
-  padding: 0 10px;
+  padding: 10px 10px 0;
   margin-bottom: 10px;
+}
+
+.om-layout-ul-3 li, .om-layout-ul-4 li {
+  float: left;
+  text-align: center;
+}
+.om-layout-ul-3:after, .om-layout-ul-4:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.om-layout-ul-3 li {
+  width: 33.33%;
+}
+
+.om-layout-ul-4 li {
+  width: 25%;
+}
+
+.om-layout-table {
+  display: table;
+  width: 100%;
+}
+.om-layout-table li {
+  display: table-cell;
+}
+
+/*txtcut*/
+.om-ellipsis {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.om-ellipsis-two {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 /*header*/
@@ -521,6 +585,45 @@ h6 {
 .om-btn-s.om-btn-gray, .om-btn.om-btn-gray, .om-btn-b.om-btn-gray {
   border: 1px solid #dddddd;
   color: #ccc;
+}
+
+.om-btn-group {
+  display: inline-block;
+  border: 1px solid #cacccd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.om-btn-group .om-btn {
+  float: left;
+  border: 0;
+  border-left: 1px solid #cacccd;
+  border-radius: 0;
+}
+.om-btn-group .om-btn:hover, .om-btn-group .om-btnactive {
+  background: #e5e5e5;
+}
+.om-btn-group .om-btn:first-child {
+  border-left: 0;
+}
+.om-btn-group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.om-btn-group.om-btn-default {
+  border: 1px solid #f78a24;
+  color: #fff;
+}
+.om-btn-group.om-btn-default .om-btn {
+  border-left: 1px solid #DE7B00;
+  background: #f78a24;
+  color: #fff;
+}
+.om-btn-group.om-btn-default .om-btn:hover, .om-btn-group.om-btn-default .om-btnactive {
+  background: #F5771B;
+}
+.om-btn-group.om-btn-default .om-btn:first-child {
+  border-left: 0;
 }
 
 /*form*/

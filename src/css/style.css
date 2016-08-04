@@ -1,4 +1,5 @@
 body {
+  line-height: 1.5;
   font-family: "microsoft yahei", arial, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   font-size: 16px;
   color: #333;
@@ -60,6 +61,18 @@ body {
   display: inline-block;
   padding: 0 10px;
   margin: 10px 0;
+}
+
+.om-layout-ul-3, .om-layout-ul-4, .om-layout-table {
+  text-align: center;
+  line-height: 1.2;
+  font-size: 14px;
+}
+.om-layout-ul-3 .iconfont, .om-layout-ul-4 .iconfont, .om-layout-table .iconfont {
+  font-size: 18px;
+}
+.om-layout-ul-3 li img, .om-layout-ul-4 li img, .om-layout-table li img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

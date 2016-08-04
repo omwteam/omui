@@ -20,7 +20,15 @@ omui，一个专注移动web开发的框架。
 	<p class="om-txt-left">左对齐</p>
     <p class="om-txt-right">右对齐</p>
     <p class="om-txt-center">居中对齐</p>
-    <p class="om-txt-justify">两端对齐</p>
+    <p class="om-txt-justify-line">一行两端对齐</p>
+	<p class="om-txt-justify">段落两端对齐</p>
+
+文本颜色
+
+	<p class="om-color-default">框架默认颜色</p>
+    <p class="om-color-red">红色</p>
+    <p class="om-color-blue">链接蓝色</p>
+    <p class="om-color-gray">灰色</p>
 
 ### 2.图标 ###
 
@@ -149,7 +157,43 @@ omui，一个专注移动web开发的框架。
 
 ### 4.布局 ###
 
+float布局
+
+	<ul class="om-layout-ul-3">
+        <li>首页</li>
+        <li>购物车</li>
+        <li>>用户</li>
+    </ul>
+	<ul class="om-layout-ul-4">
+        <li><img src="../img/grid/x_04.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_06.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_09.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_10.jpg" alt=""/></li>
+    </ul>
+
+table-cell布局
+
+	<ul class="om-layout-table">
+        <li>首页</li>
+        <li>购物车</li>
+        <li>>用户</li>
+    </ul>
+	<ul class="om-layout-table">
+        <li><img src="../img/grid/x_04.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_06.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_09.jpg" alt=""/></li>
+        <li><img src="../img/grid/x_10.jpg" alt=""/></li>
+    </ul>
+
 ### 5.文字截断 ###
+
+单行截断
+
+	<p class="om-ellipsis">这里是一行文字，长度太长的时候就会变成省略号</p>	
+
+多行截断
+
+	<p class="om-ellipsis-two">这里是多行文字，长度太长超过第二行的时候就变成省略号。</p>
 
 ## 二、UI组件 ##
 
@@ -238,6 +282,18 @@ omui，一个专注移动web开发的框架。
 	<button class="om-btn-b">确 定</button>
     <button class="om-btn-b om-btn-default">确 定</button>
     <button class="om-btn-b om-btn-gray">取消</button>
+
+按钮组
+
+	<div class="om-btn-group">
+        <button class="om-btn">左边</button>
+        <button class="om-btn">中间</button>
+        <button class="om-btn">右边</button>
+    </div>
+    <div class="om-btn-group om-btn-default">
+        <button class="om-btn">左边</button>
+        <button class="om-btn">右边</button>
+    </div>
 
 ### 6.表单 ###
 
