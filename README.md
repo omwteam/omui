@@ -407,3 +407,73 @@ table-cell布局
 
 	<img src="img2.jpg" class="om-img-radius"/>
     <img src="img2.jpg" class="om-img-circle"/>
+
+### 8.列表 ###
+
+普通列表
+
+	<ul class="om-list-box">
+        <li class="om-list">列表一</li>
+        <li class="om-list">列表一</li>
+    </ul>
+
+跳转列表
+
+	<ul class="om-list-box om-list-link">
+        <li class="om-list">列表二</li>
+        <li class="om-list">列表二</li>
+    </ul>
+
+双行列表
+
+	<ul class="om-list-box om-list-link">
+        <li class="om-list">
+            <div class="om-list-title">这里是文章列表的标题，超出会显示省略号</div>
+            <div class="om-list-disc">这里是辅助文字描述，超出会显示省略号</div>
+        </li>
+    </ul>
+
+文章列表
+
+	<ul class="om-list-box om-list-article">
+        <li class="om-list">
+            <img src="../img/img/img2.jpg" class="om-list-img"/>
+            <div class="om-list-title">这里是文章列表的标题，超出会显示省略号</div>
+            <div class="om-list-disc">这里是辅助文字描述，超出会显示省略号</div>
+        </li>
+    </ul>
+
+文章列表带圆角图片
+
+	<ul class="om-list-box om-list-article">
+        <li class="om-list">
+            <img src="../img/img/img2.jpg" class="om-list-img om-img-circle"/>
+            <div class="om-list-title">这里是文章列表的标题，超出会显示省略号</div>
+            <div class="om-list-disc">这里是辅助文字描述，超出会显示省略号</div>
+        </li>
+    </ul>
+
+文章列表带大图
+
+	<ul class="om-list-box om-list-article">
+        <li class="om-list om-list-big">
+            <img src="../img/img/img.jpg" class="om-list-img"/>
+            <div class="om-list-title">这里是文章列表的标题，超出会显示省略号</div>
+            <div class="om-list-disc">这里是辅助文字描述，超出会显示省略号</div>
+        </li>
+    </ul>
+
+### 9.表格 ###
+
+	<table class="om-table">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>22</td>
+            <td>男</td>
+        </tr>
+    </table>

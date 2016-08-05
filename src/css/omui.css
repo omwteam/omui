@@ -452,9 +452,6 @@ h6 {
   padding: 0 3px;
   font-size: 14px;
 }
-.om-header ~ .om-container {
-  padding-top: 50px;
-}
 
 .om-header-default {
   background-color: #f78a24;
@@ -470,6 +467,9 @@ h6 {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+.om-header-fixed ~ .om-container {
+  padding-top: 50px;
 }
 
 /*footer*/
@@ -824,7 +824,9 @@ h6 {
 
 /*img*/
 .om-img {
+  display: block;
   max-width: 100%;
+  margin: auto;
 }
 
 .om-img-radius {
@@ -833,6 +835,136 @@ h6 {
 
 .om-img-circle {
   border-radius: 50%;
+}
+
+/*list*/
+.om-list-box {
+  padding-left: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.om-list-box .om-list {
+  position: relative;
+  padding: 10px 5px 10px 5px;
+  line-height: 25px;
+  border-top: 1px solid #eee;
+}
+.om-list-box .om-list:first-child {
+  border-top: 0;
+}
+.om-list-box.om-list-link .om-list, .om-list-box.om-list-article .om-list {
+  padding-right: 25px;
+}
+.om-list-box.om-list-link .om-list:after, .om-list-box.om-list-article .om-list:after {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -12px;
+  content: "\e60c";
+  font-family: "iconfont";
+  color: #aaa;
+}
+.om-list-box.om-list-article .om-list {
+  padding-left: 60px;
+}
+.om-list-box.om-list-article .om-list .om-list-img {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+}
+.om-list-box.om-list-article .om-list.om-list-big {
+  padding-left: 85px;
+}
+.om-list-box.om-list-article .om-list.om-list-big .om-list-img {
+  width: 75px;
+}
+.om-list-box .om-list-title, .om-list-box .om-list-disc {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.om-list-box .om-list-disc {
+  color: #999;
+  font-size: 14px;
+}
+.om-list-box .om-list-disc span {
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+/*table*/
+.om-table {
+  width: 100%;
+  border: 0;
+  border-spacing: 0;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+.om-table th, .om-table td {
+  font-weight: normal;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.om-table th:first-child, .om-table td:first-child {
+  border-left: 0;
+}
+
+/*search*/
+.om-search {
+  position: relative;
+  height: 55px;
+  padding: 10px 75px 10px 10px;
+  background: #e6e4e1;
+}
+.om-search.om-search-default {
+  background: #f78a24;
+}
+.om-search.om-search-default .om-search-btn {
+  color: #f78a24;
+}
+.om-search .om-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+}
+.om-search .om-search-close {
+  position: absolute;
+  right: 75px;
+  top: 15px;
+  width: 23px;
+  height: 23px;
+}
+.om-search .om-search-close .iconfont {
+  font-size: 20px;
+}
+.om-search .om-search-input {
+  width: 100%;
+  height: 35px;
+  padding: 0 10px 0 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+}
+.om-search .om-search-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 55px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 3px;
+  color: #333;
+  background: #fff;
+}
+.om-search .iconfont {
+  color: #999;
 }
 
 /*# sourceMappingURL=omui.css.map */
