@@ -18,64 +18,62 @@
     <link rel="stylesheet" href="../src/css/style.css"/>
 </head>
 <body>
-
 <header class="om-header om-header-default om-header-fixed">
     <a href="javascript:history.back()" class="om-header-left">
         <i class="iconfont icon-left"></i>
     </a>
-    <h1 class="om-header-title">omui框架</h1>
+    <h1 class="om-header-title">这里是头部固定</h1>
     <a href="../index.html" class="om-header-right">
         <i class="iconfont icon-home"></i>
     </a>
 </header>
 <footer class="om-footer om-footer-fixed">
     <div class="om-grid-row om-grid-center">
-        <a href="../index.html" class="om-grid-col-33 om-footer-on">基础样式</a>
-        <a href="ui.html" class="om-grid-col-33">UI组件</a>
+        <a href="../index.html" class="om-grid-col-33">基础样式</a>
+        <a href="ui.html" class="om-grid-col-33 om-footer-on">UI组件</a>
         <a href="js.html" class="om-grid-col-33">js组件</a>
     </div>
 </footer>
 <section class="om-container">
-    <div class="om-title">float布局</div>
+    <div class="om-title">默认头部</div>
     <div class="om-layout">
-        <ul class="om-layout-ul-3">
-            <li>
+        <header class="om-header om-header-default">
+            <a href="" class="om-header-left">
+                <i class="iconfont icon-left"></i>
+            </a>
+            <h1 class="om-header-title">omui框架</h1>
+            <a href="" class="om-header-right">
                 <i class="iconfont icon-home"></i>
-                <p>首页</p>
-            </li>
-            <li>
-                <i class="iconfont icon-cart"></i>
-                <p>购物车</p>
-            </li>
-            <li>
-                <i class="iconfont icon-user"></i>
-                <p>用户</p>
-            </li>
-        </ul>
-        <br>
-        <ul class="om-layout-ul-4">
-            <li><img src="../img/grid/x_04.jpg" alt=""/></li>
-            <li><img src="../img/grid/x_06.jpg" alt=""/></li>
-            <li><img src="../img/grid/x_09.jpg" alt=""/></li>
-            <li><img src="../img/grid/x_10.jpg" alt=""/></li>
-        </ul>
+            </a>
+        </header>
     </div>
-    <div class="om-title">table-cell布局</div>
+    <div class="om-title">灰底头部</div>
     <div class="om-layout">
-        <ul class="om-layout-table">
-            <li>
+        <header class="om-header">
+            <a href="" class="om-header-left">
+                <i class="iconfont icon-left"></i>
+            </a>
+            <h1 class="om-header-title">omui框架</h1>
+            <a href="" class="om-header-right">
                 <i class="iconfont icon-home"></i>
-                <p>首页</p>
-            </li>
-            <li>
-                <i class="iconfont icon-cart"></i>
-                <p>购物车</p>
-            </li>
-            <li>
-                <i class="iconfont icon-user"></i>
-                <p>用户</p>
-            </li>
-        </ul>
+            </a>
+        </header>
+    </div>
+    <div class="om-title">图标+文字</div>
+    <div class="om-layout">
+        <header class="om-header om-header-default">
+            <a href="" class="om-header-left om-header-span">
+                <i class="iconfont icon-left"></i><span class="om-header-nav-btn">返回</span>
+            </a>
+            <h1 class="om-header-title">omui框架</h1>
+            <a href="" class="om-header-right om-header-span">
+                <i class="iconfont icon-home"></i><span class="om-header-nav-btn">首页</span>
+            </a>
+        </header>
+    </div>
+    <div class="om-title">头部固定</div>
+    <div class="om-layout">
+        见最上方
     </div>
 </section>
 </body>

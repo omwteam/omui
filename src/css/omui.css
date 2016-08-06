@@ -171,7 +171,7 @@ h6 {
 /*icon*/
 @font-face {
   font-family: 'iconfont';
-  src: url("//at.alicdn.com/t/font_1470218198_0141077.eot"), url("//at.alicdn.com/t/font_1470218198_0141077.woff") format("woff"), url("//at.alicdn.com/t/font_1470218198_0141077.ttf") format("truetype"), url("//at.alicdn.com/t/font_1470218198_0141077.svg#iconfont") format("svg");
+  src: url("//at.alicdn.com/t/font_1470454865_9598858.eot"), url("//at.alicdn.com/t/font_1470454865_9598858.woff") format("woff"), url("//at.alicdn.com/t/font_1470454865_9598858.ttf") format("truetype"), url("//at.alicdn.com/t/font_1470454865_9598858.svg#iconfont") format("svg");
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -366,6 +366,30 @@ h6 {
   content: "\e61e";
 }
 
+.icon-box:before {
+  content: "\e634";
+}
+
+.icon-box-check:before {
+  content: "\e635";
+}
+
+.icon-radio:before {
+  content: "\e632";
+}
+
+.icon-radio-check:before {
+  content: "\e633";
+}
+
+.icon-cate:before {
+  content: "\e630";
+}
+
+.icon-cate-full:before {
+  content: "\e631";
+}
+
 /*layout*/
 .om-layout {
   padding: 10px 10px 0;
@@ -393,9 +417,12 @@ h6 {
 .om-layout-table {
   display: table;
   width: 100%;
+  height: 100%;
 }
 .om-layout-table li {
   display: table-cell;
+  width: 1%;
+  vertical-align: middle;
 }
 
 /*txtcut*/
@@ -420,6 +447,7 @@ h6 {
   width: 100%;
   height: 49px;
   line-height: 49px;
+  background: #e5e5e5;
   z-index: 999;
 }
 .om-header .om-header-title {
@@ -448,9 +476,17 @@ h6 {
 .om-header a.om-header-left .iconfont, .om-header a.om-header-right .iconfont {
   font-size: 20px;
 }
-.om-header a.om-header-left .om-header-nav-btn, .om-header a.om-header-right .om-header-nav-btn {
-  padding: 0 3px;
+.om-header a.om-header-left.om-header-span, .om-header a.om-header-right.om-header-span {
   font-size: 14px;
+}
+.om-header a.om-header-left.om-header-span .iconfont, .om-header a.om-header-right.om-header-span .iconfont {
+  font-size: 16px;
+}
+.om-header a.om-header-left .om-header-nav-btn, .om-header a.om-header-right .om-header-nav-btn {
+  display: inline-block;
+  padding: 0 3px;
+  margin-top: -1px;
+  vertical-align: middle;
 }
 
 .om-header-default {
@@ -474,19 +510,30 @@ h6 {
 
 /*footer*/
 .om-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   height: 56px;
-  line-height: 56px;
+  line-height: 36px;
+  padding: 10px 0;
+  background: #f3f1f1;
   z-index: 999;
 }
 .om-footer .om-footer-on {
   color: #f78a24;
 }
-.om-footer ~ .om-container {
+.om-footer.om-footer-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.om-footer.om-footer-fixed ~ .om-container {
   padding-bottom: 57px;
+}
+.om-footer.om-footer-default {
+  background: #f78a24;
+  color: #dedede;
+}
+.om-footer.om-footer-default .om-footer-on {
+  color: #fff;
 }
 
 /*tags*/
@@ -965,6 +1012,405 @@ h6 {
 }
 .om-search .iconfont {
   color: #999;
+}
+
+/*loading*/
+.om-toast {
+  position: fixed;
+  z-index: 3;
+  width: 7.6em;
+  min-height: 7.6em;
+  top: 100px;
+  left: 50%;
+  margin-left: -3.8em;
+  background: rgba(40, 40, 40, 0.75);
+  text-align: center;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+
+.om-toast-content {
+  margin-top: 64%;
+  font-size: 14px;
+}
+
+.om-loading {
+  position: absolute;
+  width: 0px;
+  z-index: 2000000000;
+  left: 50%;
+  top: 38%;
+}
+
+.om-loading-line {
+  position: absolute;
+  top: -1px;
+  opacity: 0.25;
+}
+.om-loading-line:before {
+  content: " ";
+  position: absolute;
+  width: 9.14px;
+  height: 3.08px;
+  background: #d1d1d5;
+  box-shadow: rgba(0, 0, 0, 0.09804) 0px 0px 1px;
+  border-radius: 1px;
+  -webkit-transform-origin: left 50% 0px;
+  transform-origin: left 50% 0px;
+}
+
+.om-loading-line-0 {
+  -webkit-animation: opacity-0 1.25s linear infinite;
+  animation: opacity-0 1.25s linear infinite;
+}
+.om-loading-line-0:before {
+  -webkit-transform: rotate(0deg) translate(7.92px, 0px);
+  transform: rotate(0deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-1 {
+  -webkit-animation: opacity-1 1.25s linear infinite;
+  animation: opacity-1 1.25s linear infinite;
+}
+.om-loading-line-1:before {
+  -webkit-transform: rotate(30deg) translate(7.92px, 0px);
+  transform: rotate(30deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-2 {
+  -webkit-animation: opacity-2 1.25s linear infinite;
+  animation: opacity-2 1.25s linear infinite;
+}
+.om-loading-line-2:before {
+  -webkit-transform: rotate(60deg) translate(7.92px, 0px);
+  transform: rotate(60deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-3 {
+  -webkit-animation: opacity-3 1.25s linear infinite;
+  animation: opacity-3 1.25s linear infinite;
+}
+.om-loading-line-3:before {
+  -webkit-transform: rotate(90deg) translate(7.92px, 0px);
+  transform: rotate(90deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-4 {
+  -webkit-animation: opacity-4 1.25s linear infinite;
+  animation: opacity-4 1.25s linear infinite;
+}
+.om-loading-line-4:before {
+  -webkit-transform: rotate(120deg) translate(7.92px, 0px);
+  transform: rotate(120deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-5 {
+  -webkit-animation: opacity-5 1.25s linear infinite;
+  animation: opacity-5 1.25s linear infinite;
+}
+.om-loading-line-5:before {
+  -webkit-transform: rotate(150deg) translate(7.92px, 0px);
+  transform: rotate(150deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-6 {
+  -webkit-animation: opacity-6 1.25s linear infinite;
+  animation: opacity-6 1.25s linear infinite;
+}
+.om-loading-line-6:before {
+  -webkit-transform: rotate(180deg) translate(7.92px, 0px);
+  transform: rotate(180deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-7 {
+  -webkit-animation: opacity-7 1.25s linear infinite;
+  animation: opacity-7 1.25s linear infinite;
+}
+.om-loading-line-7:before {
+  -webkit-transform: rotate(210deg) translate(7.92px, 0px);
+  transform: rotate(210deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-8 {
+  -webkit-animation: opacity-8 1.25s linear infinite;
+  animation: opacity-8 1.25s linear infinite;
+}
+.om-loading-line-8:before {
+  -webkit-transform: rotate(240deg) translate(7.92px, 0px);
+  transform: rotate(240deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-9 {
+  -webkit-animation: opacity-9 1.25s linear infinite;
+  animation: opacity-9 1.25s linear infinite;
+}
+.om-loading-line-9:before {
+  -webkit-transform: rotate(270deg) translate(7.92px, 0px);
+  transform: rotate(270deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-10 {
+  -webkit-animation: opacity-10 1.25s linear infinite;
+  animation: opacity-10 1.25s linear infinite;
+}
+.om-loading-line-10:before {
+  -webkit-transform: rotate(300deg) translate(7.92px, 0px);
+  transform: rotate(300deg) translate(7.92px, 0px);
+}
+
+.om-loading-line-11 {
+  -webkit-animation: opacity-11 1.25s linear infinite;
+  animation: opacity-11 1.25s linear infinite;
+}
+.om-loading-line-11:before {
+  -webkit-transform: rotate(330deg) translate(7.92px, 0px);
+  transform: rotate(330deg) translate(7.92px, 0px);
+}
+
+@-webkit-keyframes opacity-0 {
+  0% {
+    opacity: 0.25;
+  }
+  0.01% {
+    opacity: 0.25;
+  }
+  0.02% {
+    opacity: 1;
+  }
+  60.01% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes opacity-1 {
+  0% {
+    opacity: 0.25;
+  }
+  8.34333% {
+    opacity: 0.25;
+  }
+  8.35333% {
+    opacity: 1;
+  }
+  68.3433% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes opacity-2 {
+  0% {
+    opacity: 0.25;
+  }
+  16.6767% {
+    opacity: 0.25;
+  }
+  16.6867% {
+    opacity: 1;
+  }
+  76.6767% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes opacity-3 {
+  0% {
+    opacity: 0.25;
+  }
+  25.01% {
+    opacity: 0.25;
+  }
+  25.02% {
+    opacity: 1;
+  }
+  85.01% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes opacity-4 {
+  0% {
+    opacity: 0.25;
+  }
+  33.3433% {
+    opacity: 0.25;
+  }
+  33.3533% {
+    opacity: 1;
+  }
+  93.3433% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes opacity-5 {
+  0% {
+    opacity: 0.270958333333333;
+  }
+  41.6767% {
+    opacity: 0.25;
+  }
+  41.6867% {
+    opacity: 1;
+  }
+  1.67667% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.270958333333333;
+  }
+}
+@-webkit-keyframes opacity-6 {
+  0% {
+    opacity: 0.375125;
+  }
+  50.01% {
+    opacity: 0.25;
+  }
+  50.02% {
+    opacity: 1;
+  }
+  10.01% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.375125;
+  }
+}
+@-webkit-keyframes opacity-7 {
+  0% {
+    opacity: 0.479291666666667;
+  }
+  58.3433% {
+    opacity: 0.25;
+  }
+  58.3533% {
+    opacity: 1;
+  }
+  18.3433% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.479291666666667;
+  }
+}
+@-webkit-keyframes opacity-8 {
+  0% {
+    opacity: 0.583458333333333;
+  }
+  66.6767% {
+    opacity: 0.25;
+  }
+  66.6867% {
+    opacity: 1;
+  }
+  26.6767% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.583458333333333;
+  }
+}
+@-webkit-keyframes opacity-9 {
+  0% {
+    opacity: 0.687625;
+  }
+  75.01% {
+    opacity: 0.25;
+  }
+  75.02% {
+    opacity: 1;
+  }
+  35.01% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.687625;
+  }
+}
+@-webkit-keyframes opacity-10 {
+  0% {
+    opacity: 0.791791666666667;
+  }
+  83.3433% {
+    opacity: 0.25;
+  }
+  83.3533% {
+    opacity: 1;
+  }
+  43.3433% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.791791666666667;
+  }
+}
+@-webkit-keyframes opacity-11 {
+  0% {
+    opacity: 0.895958333333333;
+  }
+  91.6767% {
+    opacity: 0.25;
+  }
+  91.6867% {
+    opacity: 1;
+  }
+  51.6767% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.895958333333333;
+  }
+}
+.om-list-load {
+  text-align: center;
+  font-size: 13px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.om-list-load .om-list-loading {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  margin-top: -3px;
+  border: 2px solid #666;
+  border-bottom-color: transparent;
+  vertical-align: middle;
+  -webkit-animation: rotate 0.75s linear infinite;
+  animation: rotate 0.75s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=omui.css.map */

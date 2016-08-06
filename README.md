@@ -211,6 +211,12 @@ table-cell布局
         </a>
     </header>
 
+灰底头部
+
+	<header class="om-header">
+        <h1 class="om-header-title">omui框架</h1>
+    </header>
+
 图标+文字
 
 	<header class="om-header om-header-default">
@@ -236,6 +242,74 @@ table-cell布局
     </header>
 
 ### 2.底部导航 ###
+
+纯文字
+
+	<footer class="om-footer">
+        <ul class="om-layout-table">
+            <li class="om-footer-on"><p>首页</p></li>
+            <li><p>分类</p></li>
+            <li><p>购物车</p></li>
+            <li><p>用户</p></li>
+        </ul>
+    </footer>
+
+纯图标
+
+	<footer class="om-footer">
+        <ul class="om-layout-table">
+            <li class="om-footer-on"><i class="iconfont icon-home"></i></li>
+            <li><i class="iconfont icon-cate"></i></li>
+            <li><i class="iconfont icon-cart"></i></li>
+            <li><i class="iconfont icon-user"></i></li>
+        </ul>
+    </footer>
+
+文字+图标
+
+	<footer class="om-footer">
+        <ul class="om-layout-table">
+            <li class="om-footer-on">
+                <i class="iconfont icon-home"></i>
+                <p>首页</p>
+            </li>
+            <li>
+                <i class="iconfont icon-cate"></i>
+                <p>分类</p>
+            </li>
+            <li>
+                <i class="iconfont icon-cart"></i>
+                <p>购物车</p>
+            </li>
+            <li>
+                <i class="iconfont icon-user"></i>
+                <p>用户</p>
+            </li>
+        </ul>
+    </footer>
+
+默认颜色
+
+	<footer class="om-footer om-footer-default">
+        <ul class="om-layout-table">
+            <li class="om-footer-on">
+                <i class="iconfont icon-home"></i>
+                <p>首页</p>
+            </li>
+            <li>
+                <i class="iconfont icon-cate"></i>
+                <p>分类</p>
+            </li>
+            <li>
+                <i class="iconfont icon-cart"></i>
+                <p>购物车</p>
+            </li>
+            <li>
+                <i class="iconfont icon-user"></i>
+                <p>用户</p>
+            </li>
+        </ul>
+    </footer>
 
 ### 3.标签 ###
 
@@ -477,3 +551,12 @@ table-cell布局
             <td>男</td>
         </tr>
     </table>
+
+### 10.搜索框 ###
+
+	<div class="om-search om-search-default">
+        <span class="om-search-icon"><i class="iconfont icon-search"></i></span>
+        <input type="text" class="om-search-input" placeholder="搜索关键词"/>
+        <span class="om-search-close"><i class="iconfont icon-close-full"></i></span>
+        <a href="javascript:;" class="om-search-btn">搜索</a>
+    </div>
