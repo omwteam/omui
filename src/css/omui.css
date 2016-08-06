@@ -514,6 +514,7 @@ h6 {
   height: 56px;
   line-height: 36px;
   padding: 10px 0;
+  border-top: 1px solid #ddd;
   background: #f3f1f1;
   z-index: 999;
 }
@@ -1015,39 +1016,35 @@ h6 {
 }
 
 /*loading*/
-.om-toast {
+.om-load-mark {
   position: fixed;
-  z-index: 3;
-  width: 7.6em;
-  min-height: 7.6em;
   top: 100px;
   left: 50%;
-  margin-left: -3.8em;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
   background: rgba(40, 40, 40, 0.75);
   text-align: center;
   border-radius: 5px;
   color: #FFFFFF;
+  z-index: 1000;
 }
-
-.om-toast-content {
+.om-load-mark .om-load-content {
   margin-top: 64%;
   font-size: 14px;
 }
-
-.om-loading {
+.om-load-mark .om-loading {
   position: absolute;
-  width: 0px;
-  z-index: 2000000000;
+  width: 0;
   left: 50%;
   top: 38%;
 }
-
-.om-loading-line {
+.om-load-mark .om-loading-line {
   position: absolute;
   top: -1px;
   opacity: 0.25;
 }
-.om-loading-line:before {
+.om-load-mark .om-loading-line:before {
   content: " ";
   position: absolute;
   width: 9.14px;

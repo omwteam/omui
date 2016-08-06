@@ -560,3 +560,34 @@ table-cell布局
         <span class="om-search-close"><i class="iconfont icon-close-full"></i></span>
         <a href="javascript:;" class="om-search-btn">搜索</a>
     </div>
+
+### 11.加载中 ###
+
+页面加载
+
+	<div class="om-load-mark">
+        <div class="om-loading">
+            <div class="om-loading-line om-loading-line-0"></div>
+            <div class="om-loading-line om-loading-line-1"></div>
+            <div class="om-loading-line om-loading-line-2"></div>
+            <div class="om-loading-line om-loading-line-3"></div>
+            <div class="om-loading-line om-loading-line-4"></div>
+            <div class="om-loading-line om-loading-line-5"></div>
+            <div class="om-loading-line om-loading-line-6"></div>
+            <div class="om-loading-line om-loading-line-7"></div>
+            <div class="om-loading-line om-loading-line-8"></div>
+            <div class="om-loading-line om-loading-line-9"></div>
+            <div class="om-loading-line om-loading-line-10"></div>
+            <div class="om-loading-line om-loading-line-11"></div>
+        </div>
+        <div class="om-load-content">正在加载</div>
+    </div>
+
+列表加载
+
+	<div class="om-list-load">
+        <div class="om-list-loading"></div>
+        正在加载...
+    </div>
+
+## 三、JS组件 ##
