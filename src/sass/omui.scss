@@ -269,28 +269,22 @@ h6{font-size: 12px;}
         white-space: nowrap;
         overflow: hidden;
     }
-    a.om-header-left{
+    .om-header-left{
         position: absolute;
         left: 10px;
         top: 0;
     }
-    a.om-header-right{
+    .om-header-right{
         position: absolute;
         right: 10px;
         top: 0;
     }
-    a.om-header-left,a.om-header-right{
+    .om-header-left,.om-header-right{
         min-width: 40px;
         height: 49px;
         text-align: center;
         .iconfont{
             font-size: 20px;
-        }
-        &.om-header-span{
-            font-size: 14px;
-            .iconfont{
-                font-size: 16px;
-            }
         }
         .om-header-nav-btn{
             display: inline-block;
@@ -299,11 +293,17 @@ h6{font-size: 12px;}
             vertical-align: middle;
         }
     }
+    .om-header-span{
+        font-size: 14px;
+        .iconfont{
+            font-size: 16px;
+        }
+    }
 }
 .om-header-default{
     background-color: $color;
     color: #fff;
-    a.om-header-left,a.om-header-right{
+    .om-header-left,.om-header-right{
         color: #ffffff;
     }
 }
@@ -405,7 +405,7 @@ h6{font-size: 12px;}
 .om-btn-s,.om-btn,.om-btn-b{
     min-width: 55px;
     height: 30px;
-    line-height: 30px;
+    line-height: 28px;
     padding:0 10px;
     display: inline-block;
     text-align: center;
@@ -414,18 +414,22 @@ h6{font-size: 12px;}
     background: #fdfdfd;
     font-size: 15px;
     color: $color;
+    &:hover,&:active{
+        background: #f3f3f3;
+    }
 }
 .om-btn-s{
     min-width: 50px;
     height: 25px;
-    line-height: 25px;
+    line-height: 23px;
     font-size: 13px;
 }
 .om-btn-b{
-    width: 100%;
-    height: 35px;
-    line-height: 35px;
     display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    margin-bottom: 10px;
     font-size: 17px;
 }
 .om-btn-s,.om-btn,.om-btn-b{
@@ -433,6 +437,9 @@ h6{font-size: 12px;}
         background: $color;
         border:1px solid $color;
         color: #fff;
+        &:hover,&:active{
+            background: #F5771B;
+        }
     }
     &.om-btn-gray{
         border:1px solid #dddddd;
@@ -449,7 +456,7 @@ h6{font-size: 12px;}
         border:0;
         border-left: 1px solid #cacccd;
         border-radius: 0;
-        &:hover,&active{
+        &:hover,&:active{
             background: #e5e5e5;
         }
         &:first-child{
@@ -468,7 +475,7 @@ h6{font-size: 12px;}
             border-left: 1px solid #DE7B00;
             background: $color;
             color: #fff;
-            &:hover,&active{
+            &:hover,&:active{
                 background: #F5771B;
             }
             &:first-child{
@@ -814,10 +821,11 @@ h6{font-size: 12px;}
         width: 55px;
         height: 35px;
         line-height: 35px;
-        text-align: center;
         border-radius: 3px;
-        color: #333;
         background: #fff;
+        color: #333;
+        font-size: 14px;
+        text-align: center;
     }
     .iconfont{
         color: #999;
@@ -856,10 +864,10 @@ h6{font-size: 12px;}
             width: 9.14px;
             height: 3.08px;
             background: #d1d1d5;
-            box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px;
+            box-shadow: rgba(0, 0, 0, 0.0980392) 0 0 1px;
             border-radius: 1px;
-            -webkit-transform-origin: left 50% 0px;
-            transform-origin: left 50% 0px;
+            -webkit-transform-origin: left 50% 0;
+            transform-origin: left 50% 0;
         }
     }
 }
@@ -1044,7 +1052,6 @@ h6{font-size: 12px;}
     51.6767% { opacity: 0.25; }
     100% { opacity: 0.895958333333333; }
 }
-
 .om-list-load {
     text-align: center;
     font-size: 13px;
@@ -1063,25 +1070,134 @@ h6{font-size: 12px;}
         animation: rotate 0.75s linear infinite;
     }
 }
-    @-webkit-keyframes rotate {
-        0% {
-            -webkit-transform: rotate(0deg);
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+/*mask*/
+.om-mask{
+    position: fixed;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 1001;
+}
+/*popup*/
+.om-popup{
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    display: none;
+    width: 300px;
+    margin-left: -150px;
+    border:1px solid #efefef;
+    background: #fff;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 1001;
+    .om-popup-title{
+        height: 45px;
+        line-height: 45px;
+    }
+    .om-popup-cont{
+        height: 90px;
+        line-height: 90px;
+        background: #f9f9f9;
+        font-size: 16px;
+        color: #555;
+        box-shadow: 0 0 10px #ddd inset;
+    }
+    .om-popup-btn-div{
+        height: 45px;
+        line-height: 45px;
+        a{
+            float: left;
+            width: 100%;
+            height: 45px;
+            font-size: 16px;
+            color: #888;
         }
-        50% {
-            -webkit-transform: rotate(180deg);
+        a:last-child{
+            color: #ff6000;
+            border-left: 1px solid #efefef;
         }
-        100% {
-            -webkit-transform: rotate(360deg);
+        a:active{
+            background: #f3f3f3;
         }
     }
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(180deg);
-        }
-        100% {
-            transform: rotate(360deg);
+    .om-popup-btn-two{
+        a{
+            width: 50%;
         }
     }
+}
+/*actionsheet*/
+.om-actionsheet{
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    z-index: 1001;
+    transform:translateY(240px);
+    transition: transform .3s;
+    .om-actionsheet-cnt{
+        margin-bottom: 10px;
+        border-radius: 3px;
+        background: #fff;
+        color: #0e90d2;
+        li{
+            height: 44px;
+            line-height: 44px;
+            padding:0 10px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            border-top: 1px solid #eee;
+        }
+        li:first-child{
+            border:0;
+        }
+        .om-actionsheet-header{
+            font-size: 14px;
+            color: #999;
+        }
+    }
+    .om-actionsheet-cancel{
+        display: block;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 3px;
+        background: #fff;
+        color: #fd472b;
+        &:active{
+            background: #efefef;
+        }
+    }
+    &.om-actionsheet-active{
+        transform: translateY(0px);
+    }
+}

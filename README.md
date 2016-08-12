@@ -591,3 +591,72 @@ table-cell布局
     </div>
 
 ## 三、JS组件 ##
+
+### 1.弹窗 ###
+
+	<div class="om-popup" id="sure">
+        <div class="om-popup-title">温馨提示</div>
+        <div class="om-popup-cont">确定要执行此操作吗？</div>
+        <div class="om-popup-btn-div om-popup-btn-two">
+            <a href="javascript:;" class="om-popup-btn-cancel">取 消</a>
+            <a href="javascript:;" class="om-popup-btn-sure">确 定</a>
+        </div>
+    </div>
+    <div class="om-popup" id="tips">
+        <div class="om-popup-title">温馨提示</div>
+        <div class="om-popup-cont">已经执行完毕</div>
+        <div class="om-popup-btn-div">
+            <a href="javascript:;" class="om-popup-btn-sure">确 定</a>
+        </div>
+    </div>
+
+	<script>
+	    function popup(elem){
+	        var _popup_id = elem.getAttribute('data-id'),
+	            _mask = document.querySelector('.om-mask'),
+	            _popup = document.getElementById(_popup_id),
+	            _btn_cancel = _popup.querySelector('.om-popup-btn-cancel'),
+	            _btn_sure = _popup.querySelector('.om-popup-btn-sure');
+	        _mask.style.display = "block";
+	        _popup.style.display = "block";
+	        if(_btn_cancel){
+	            _btn_cancel.onclick = function(){
+	                _mask.style.display = "none";
+	                _popup.style.display = "none";
+	                alert("你选择了取消！")
+	            };
+	        }
+	        _btn_sure.onclick = function(){
+	            _mask.style.display = "none";
+	            _popup.style.display = "none";
+	            alert("你选择了确定！")
+	        };
+	    }
+	</script>
+
+### 2.菜单actionsheet ###
+
+	<div class="om-actionsheet">
+        <ul class="om-actionsheet-cnt">
+            <li class="om-actionsheet-header">分享到其他平台</li>
+            <li>朋友圈</li>
+            <li>qq好友</li>
+            <li>新浪微博</li>
+        </ul>
+        <a href="#" class="om-actionsheet-cancel">取 消</a>
+    </div>
+	<script>
+	    function actionsheet(){
+	        var _sheet = document.querySelector('.om-actionsheet'),
+	            _mask = document.querySelector('.om-mask'),
+	            _cancel = document.querySelector('.om-actionsheet-cancel');
+	        _mask.style.display = "block";
+	        _sheet.classList.add('om-actionsheet-active');
+	        _cancel.onclick = function(){
+	            _sheet.classList.remove('om-actionsheet-active');
+	            setTimeout(function(){
+	                _mask.style.display = "none";
+	            },200)
+	        }
+	    }
+	</script>

@@ -458,42 +458,42 @@ h6 {
   white-space: nowrap;
   overflow: hidden;
 }
-.om-header a.om-header-left {
+.om-header .om-header-left {
   position: absolute;
   left: 10px;
   top: 0;
 }
-.om-header a.om-header-right {
+.om-header .om-header-right {
   position: absolute;
   right: 10px;
   top: 0;
 }
-.om-header a.om-header-left, .om-header a.om-header-right {
+.om-header .om-header-left, .om-header .om-header-right {
   min-width: 40px;
   height: 49px;
   text-align: center;
 }
-.om-header a.om-header-left .iconfont, .om-header a.om-header-right .iconfont {
+.om-header .om-header-left .iconfont, .om-header .om-header-right .iconfont {
   font-size: 20px;
 }
-.om-header a.om-header-left.om-header-span, .om-header a.om-header-right.om-header-span {
-  font-size: 14px;
-}
-.om-header a.om-header-left.om-header-span .iconfont, .om-header a.om-header-right.om-header-span .iconfont {
-  font-size: 16px;
-}
-.om-header a.om-header-left .om-header-nav-btn, .om-header a.om-header-right .om-header-nav-btn {
+.om-header .om-header-left .om-header-nav-btn, .om-header .om-header-right .om-header-nav-btn {
   display: inline-block;
   padding: 0 3px;
   margin-top: -1px;
   vertical-align: middle;
+}
+.om-header .om-header-span {
+  font-size: 14px;
+}
+.om-header .om-header-span .iconfont {
+  font-size: 16px;
 }
 
 .om-header-default {
   background-color: #f78a24;
   color: #fff;
 }
-.om-header-default a.om-header-left, .om-header-default a.om-header-right {
+.om-header-default .om-header-left, .om-header-default .om-header-right {
   color: #ffffff;
 }
 
@@ -602,7 +602,7 @@ h6 {
 .om-btn-s, .om-btn, .om-btn-b {
   min-width: 55px;
   height: 30px;
-  line-height: 30px;
+  line-height: 28px;
   padding: 0 10px;
   display: inline-block;
   text-align: center;
@@ -612,19 +612,23 @@ h6 {
   font-size: 15px;
   color: #f78a24;
 }
+.om-btn-s:hover, .om-btn-s:active, .om-btn:hover, .om-btn:active, .om-btn-b:hover, .om-btn-b:active {
+  background: #f3f3f3;
+}
 
 .om-btn-s {
   min-width: 50px;
   height: 25px;
-  line-height: 25px;
+  line-height: 23px;
   font-size: 13px;
 }
 
 .om-btn-b {
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
   display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 38px;
+  margin-bottom: 10px;
   font-size: 17px;
 }
 
@@ -632,6 +636,9 @@ h6 {
   background: #f78a24;
   border: 1px solid #f78a24;
   color: #fff;
+}
+.om-btn-s.om-btn-default:hover, .om-btn-s.om-btn-default:active, .om-btn.om-btn-default:hover, .om-btn.om-btn-default:active, .om-btn-b.om-btn-default:hover, .om-btn-b.om-btn-default:active {
+  background: #F5771B;
 }
 .om-btn-s.om-btn-gray, .om-btn.om-btn-gray, .om-btn-b.om-btn-gray {
   border: 1px solid #dddddd;
@@ -650,7 +657,7 @@ h6 {
   border-left: 1px solid #cacccd;
   border-radius: 0;
 }
-.om-btn-group .om-btn:hover, .om-btn-group .om-btnactive {
+.om-btn-group .om-btn:hover, .om-btn-group .om-btn:active {
   background: #e5e5e5;
 }
 .om-btn-group .om-btn:first-child {
@@ -670,7 +677,7 @@ h6 {
   background: #f78a24;
   color: #fff;
 }
-.om-btn-group.om-btn-default .om-btn:hover, .om-btn-group.om-btn-default .om-btnactive {
+.om-btn-group.om-btn-default .om-btn:hover, .om-btn-group.om-btn-default .om-btn:active {
   background: #F5771B;
 }
 .om-btn-group.om-btn-default .om-btn:first-child {
@@ -1006,10 +1013,11 @@ h6 {
   width: 55px;
   height: 35px;
   line-height: 35px;
-  text-align: center;
   border-radius: 3px;
-  color: #333;
   background: #fff;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
 }
 .om-search .iconfont {
   color: #999;
@@ -1050,10 +1058,10 @@ h6 {
   width: 9.14px;
   height: 3.08px;
   background: #d1d1d5;
-  box-shadow: rgba(0, 0, 0, 0.09804) 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.09804) 0 0 1px;
   border-radius: 1px;
-  -webkit-transform-origin: left 50% 0px;
-  transform-origin: left 50% 0px;
+  -webkit-transform-origin: left 50% 0;
+  transform-origin: left 50% 0;
 }
 
 .om-loading-line-0 {
@@ -1400,14 +1408,123 @@ h6 {
 }
 @keyframes rotate {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   50% {
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+/*mask*/
+.om-mask {
+  position: fixed;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+/*popup*/
+.om-popup {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  display: none;
+  width: 300px;
+  margin-left: -150px;
+  border: 1px solid #efefef;
+  background: #fff;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 1001;
+}
+.om-popup .om-popup-title {
+  height: 45px;
+  line-height: 45px;
+}
+.om-popup .om-popup-cont {
+  height: 90px;
+  line-height: 90px;
+  background: #f9f9f9;
+  font-size: 16px;
+  color: #555;
+  box-shadow: 0 0 10px #ddd inset;
+}
+.om-popup .om-popup-btn-div {
+  height: 45px;
+  line-height: 45px;
+}
+.om-popup .om-popup-btn-div a {
+  float: left;
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  color: #888;
+}
+.om-popup .om-popup-btn-div a:last-child {
+  color: #ff6000;
+  border-left: 1px solid #efefef;
+}
+.om-popup .om-popup-btn-div a:active {
+  background: #f3f3f3;
+}
+.om-popup .om-popup-btn-two a {
+  width: 50%;
+}
+
+/*actionsheet*/
+.om-actionsheet {
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  text-align: center;
+  z-index: 1001;
+  transform: translateY(240px);
+  transition: transform .3s;
+}
+.om-actionsheet .om-actionsheet-cnt {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background: #fff;
+  color: #0e90d2;
+}
+.om-actionsheet .om-actionsheet-cnt li {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-top: 1px solid #eee;
+}
+.om-actionsheet .om-actionsheet-cnt li:first-child {
+  border: 0;
+}
+.om-actionsheet .om-actionsheet-cnt .om-actionsheet-header {
+  font-size: 14px;
+  color: #999;
+}
+.om-actionsheet .om-actionsheet-cancel {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 3px;
+  background: #fff;
+  color: #fd472b;
+}
+.om-actionsheet .om-actionsheet-cancel:active {
+  background: #efefef;
+}
+.om-actionsheet.om-actionsheet-active {
+  transform: translateY(0px);
 }
 
 /*# sourceMappingURL=omui.css.map */

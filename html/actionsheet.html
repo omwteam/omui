@@ -27,44 +27,37 @@
         <i class="iconfont icon-home"></i>
     </a>
 </header>
-<footer class="om-footer om-footer-fixed">
-    <div class="om-grid-row om-grid-center">
-        <a href="../index.html" class="om-grid-col-33">基础样式</a>
-        <a href="ui.html" class="om-grid-col-33 om-footer-on">UI组件</a>
-        <a href="js.html" class="om-grid-col-33">js组件</a>
-    </div>
-</footer>
 <section class="om-container">
-    <div class="om-title">小按钮</div>
+    <div class="om-mask"></div>
+    <div class="om-title">菜单</div>
     <div class="om-layout">
-        <button class="om-btn-s">确定</button>
-        <button class="om-btn-s om-btn-default">确定</button>
-        <button class="om-btn-s om-btn-gray">取消</button>
+        <button class="om-btn-b om-btn-default" onclick="actionsheet()">actionsheet</button>
     </div>
-    <div class="om-title">普通按钮</div>
-    <div class="om-layout">
-        <button class="om-btn">确定</button>
-        <button class="om-btn om-btn-default">确定</button>
-        <button class="om-btn om-btn-gray">取消</button>
-    </div>
-    <div class="om-title">大按钮</div>
-    <div class="om-layout">
-        <button class="om-btn-b">确 定</button>
-        <button class="om-btn-b om-btn-default">确 定</button>
-        <button class="om-btn-b om-btn-gray">取消</button>
-    </div>
-    <div class="om-title">按钮组</div>
-    <div class="om-layout">
-        <div class="om-btn-group">
-            <button class="om-btn">左边</button>
-            <button class="om-btn">中间</button>
-            <button class="om-btn">右边</button>
-        </div>
-        <div class="om-btn-group om-btn-default">
-            <button class="om-btn">左边</button>
-            <button class="om-btn">右边</button>
-        </div>
+    <div class="om-actionsheet">
+        <ul class="om-actionsheet-cnt">
+            <li class="om-actionsheet-header">分享到其他平台</li>
+            <li>朋友圈</li>
+            <li>qq好友</li>
+            <li>新浪微博</li>
+        </ul>
+        <a href="#" class="om-actionsheet-cancel">取 消</a>
     </div>
 </section>
+
+<script>
+    function actionsheet(){
+        var _sheet = document.querySelector('.om-actionsheet'),
+            _mask = document.querySelector('.om-mask'),
+            _cancel = document.querySelector('.om-actionsheet-cancel');
+        _mask.style.display = "block";
+        _sheet.classList.add('om-actionsheet-active');
+        _cancel.onclick = function(){
+            _sheet.classList.remove('om-actionsheet-active');
+            setTimeout(function(){
+                _mask.style.display = "none";
+            },200)
+        }
+    }
+</script>
 </body>
 </html>

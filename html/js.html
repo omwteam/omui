@@ -18,35 +18,43 @@
     <link rel="stylesheet" href="../src/css/style.css"/>
 </head>
 <body>
-
-<header class="om-header om-header-default om-header-fixed">
-    <a href="javascript:history.back()" class="om-header-left">
-        <i class="iconfont icon-left"></i>
-    </a>
-    <h1 class="om-header-title">omui框架</h1>
-    <a href="../index.html" class="om-header-right">
-        <i class="iconfont icon-home"></i>
-    </a>
-</header>
-<footer class="om-footer om-footer-fixed">
-    <div class="om-grid-row om-grid-center">
-        <a href="../index.html" class="om-grid-col-33">基础样式</a>
-        <a href="ui.html" class="om-grid-col-33">UI组件</a>
-        <a href="js.html" class="om-grid-col-33 om-footer-on">js组件</a>
-    </div>
-</footer>
-<section class="om-container">
-    <ul class="om-list-box">
-        <li class="om-list">浮层提示框</li>
-        <li class="om-list">选项卡</li>
-        <li class="om-list">侧边栏</li>
-        <li class="om-list">日期组件</li>
-        <li class="om-list">轮播图</li>
-        <li class="om-list">弹窗</li>
-        <li class="om-list">菜单actionsheet</li>
-    </ul>
-</section>
-
-
+    <header class="om-header om-header-default om-header-fixed">
+        <a href="javascript:history.back()" class="om-header-left">
+            <i class="iconfont icon-left"></i>
+        </a>
+        <h1 class="om-header-title">omui框架</h1>
+        <a href="../index.html" class="om-header-right">
+            <i class="iconfont icon-home"></i>
+        </a>
+    </header>
+    <footer class="om-footer om-footer-fixed">
+        <div class="om-grid-row om-grid-center">
+            <a href="../index.html" class="om-grid-col-33">基础样式</a>
+            <a href="ui.html" class="om-grid-col-33">UI组件</a>
+            <a href="js.html" class="om-grid-col-33 om-footer-on">js组件</a>
+        </div>
+    </footer>
+    <section class="om-container">
+        <ul class="om-list-box">
+            <li class="om-list" data-href="toast.html">浮层提示框</li>
+            <li class="om-list" data-href="tab.html">选项卡</li>
+            <li class="om-list" data-href="sidebar.html">侧边栏</li>
+            <li class="om-list" data-href="date.html">日期组件</li>
+            <li class="om-list" data-href="slider.html">轮播图</li>
+            <li class="om-list" data-href="popup.html">弹窗</li>
+            <li class="om-list" data-href="actionsheet.html">菜单actionsheet</li>
+        </ul>
+    </section>
+    <script>
+        var _li = document.querySelectorAll('.om-list'),
+                _href = '',
+                i;
+        for(i in _li){
+            _li[ i ].onclick = function(){
+                _href = this.getAttribute('data-href');
+                location.href = _href;
+            };
+        }
+    </script>
 </body>
 </html>

@@ -49,14 +49,16 @@
             <li class="om-list" data-href="footer.html">底部</li>
         </ul>
     </section>
-    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.slim.min.js"></script>
     <script>
-        $('.om-list').on('click',function(){
-            var href = $(this).data('href');
-            if(href){
-                location.href = href;
-            }
-        });
+        var _li = document.querySelectorAll('.om-list'),
+                _href = '',
+                i;
+        for(i in _li){
+            _li[ i ].onclick = function(){
+                _href = this.getAttribute('data-href');
+                location.href = _href;
+            };
+        }
     </script>
 </body>
 </html>
