@@ -126,14 +126,8 @@ h6 {
 .om-grid-row .om-grid-col-25 {
   width: 25%;
 }
-.om-grid-row .om-grid-col-33 {
-  width: 33.33333333%;
-}
 .om-grid-row .om-grid-col-50 {
   width: 50%;
-}
-.om-grid-row .om-grid-col-66 {
-  width: 66.66666666%;
 }
 .om-grid-row .om-grid-col-75 {
   width: 75%;
@@ -143,6 +137,12 @@ h6 {
 }
 .om-grid-row .om-grid-col-90 {
   width: 90%;
+}
+.om-grid-row .om-grid-col-33 {
+  width: 33.33333333%;
+}
+.om-grid-row .om-grid-col-66 {
+  width: 66.66666666%;
 }
 .om-grid-row .om-grid-equal-25 {
   padding-bottom: 25%;
@@ -426,7 +426,7 @@ h6 {
 }
 
 /*txtcut*/
-.om-ellipsis {
+.om-ellipsis, .om-header .om-header-title, .om-list-box .om-list-title, .om-list-box .om-list-disc, .om-actionsheet .om-actionsheet-cnt li, .om-poptips-top, .om-poptips-btm {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -454,9 +454,6 @@ h6 {
   display: block;
   padding: 0 20%;
   text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .om-header .om-header-left {
   position: absolute;
@@ -571,10 +568,7 @@ h6 {
   background: #f74c31;
 }
 
-.om-reddot-num {
-  position: absolute;
-  right: -9px;
-  top: -9px;
+.om-reddot-num, .om-reddot-before {
   width: 18px;
   height: 18px;
   line-height: 18px;
@@ -585,17 +579,15 @@ h6 {
   font-size: 12px;
 }
 
+.om-reddot-num {
+  position: absolute;
+  right: -9px;
+  top: -9px;
+}
+
 .om-reddot-before {
   display: inline-block;
-  width: 18px;
-  height: 18px;
   margin-right: 5px;
-  line-height: 18px;
-  text-align: center;
-  border-radius: 9px;
-  background: #f74c31;
-  color: #fff;
-  font-size: 12px;
 }
 
 /*button*/
@@ -653,7 +645,7 @@ h6 {
 }
 .om-btn-group .om-btn {
   float: left;
-  border: 0;
+  border-width: 0;
   border-left: 1px solid #cacccd;
   border-radius: 0;
 }
@@ -935,11 +927,6 @@ h6 {
 .om-list-box.om-list-article .om-list.om-list-big .om-list-img {
   width: 75px;
 }
-.om-list-box .om-list-title, .om-list-box .om-list-disc {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 .om-list-box .om-list-disc {
   color: #999;
   font-size: 14px;
@@ -952,11 +939,11 @@ h6 {
 /*table*/
 .om-table {
   width: 100%;
-  border: 0;
+  border-width: 0;
   border-spacing: 0;
+  border-bottom: 1px solid #ddd;
   text-align: center;
   line-height: 40px;
-  border-bottom: 1px solid #ddd;
 }
 .om-table th, .om-table td {
   font-weight: normal;
@@ -1069,8 +1056,8 @@ h6 {
   animation: opacity-0 1.25s linear infinite;
 }
 .om-loading-line-0:before {
-  -webkit-transform: rotate(0deg) translate(7.92px, 0px);
-  transform: rotate(0deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(0deg) translate(8px, 0px);
+  transform: rotate(0deg) translate(8px, 0px);
 }
 
 .om-loading-line-1 {
@@ -1078,8 +1065,8 @@ h6 {
   animation: opacity-1 1.25s linear infinite;
 }
 .om-loading-line-1:before {
-  -webkit-transform: rotate(30deg) translate(7.92px, 0px);
-  transform: rotate(30deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(30deg) translate(8px, 0px);
+  transform: rotate(30deg) translate(8px, 0px);
 }
 
 .om-loading-line-2 {
@@ -1087,8 +1074,8 @@ h6 {
   animation: opacity-2 1.25s linear infinite;
 }
 .om-loading-line-2:before {
-  -webkit-transform: rotate(60deg) translate(7.92px, 0px);
-  transform: rotate(60deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(60deg) translate(8px, 0px);
+  transform: rotate(60deg) translate(8px, 0px);
 }
 
 .om-loading-line-3 {
@@ -1096,8 +1083,8 @@ h6 {
   animation: opacity-3 1.25s linear infinite;
 }
 .om-loading-line-3:before {
-  -webkit-transform: rotate(90deg) translate(7.92px, 0px);
-  transform: rotate(90deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(90deg) translate(8px, 0px);
+  transform: rotate(90deg) translate(8px, 0px);
 }
 
 .om-loading-line-4 {
@@ -1105,8 +1092,8 @@ h6 {
   animation: opacity-4 1.25s linear infinite;
 }
 .om-loading-line-4:before {
-  -webkit-transform: rotate(120deg) translate(7.92px, 0px);
-  transform: rotate(120deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(120deg) translate(8px, 0px);
+  transform: rotate(120deg) translate(8px, 0px);
 }
 
 .om-loading-line-5 {
@@ -1114,8 +1101,8 @@ h6 {
   animation: opacity-5 1.25s linear infinite;
 }
 .om-loading-line-5:before {
-  -webkit-transform: rotate(150deg) translate(7.92px, 0px);
-  transform: rotate(150deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(150deg) translate(8px, 0px);
+  transform: rotate(150deg) translate(8px, 0px);
 }
 
 .om-loading-line-6 {
@@ -1123,8 +1110,8 @@ h6 {
   animation: opacity-6 1.25s linear infinite;
 }
 .om-loading-line-6:before {
-  -webkit-transform: rotate(180deg) translate(7.92px, 0px);
-  transform: rotate(180deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(180deg) translate(8px, 0px);
+  transform: rotate(180deg) translate(8px, 0px);
 }
 
 .om-loading-line-7 {
@@ -1132,8 +1119,8 @@ h6 {
   animation: opacity-7 1.25s linear infinite;
 }
 .om-loading-line-7:before {
-  -webkit-transform: rotate(210deg) translate(7.92px, 0px);
-  transform: rotate(210deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(210deg) translate(8px, 0px);
+  transform: rotate(210deg) translate(8px, 0px);
 }
 
 .om-loading-line-8 {
@@ -1141,8 +1128,8 @@ h6 {
   animation: opacity-8 1.25s linear infinite;
 }
 .om-loading-line-8:before {
-  -webkit-transform: rotate(240deg) translate(7.92px, 0px);
-  transform: rotate(240deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(240deg) translate(8px, 0px);
+  transform: rotate(240deg) translate(8px, 0px);
 }
 
 .om-loading-line-9 {
@@ -1150,8 +1137,8 @@ h6 {
   animation: opacity-9 1.25s linear infinite;
 }
 .om-loading-line-9:before {
-  -webkit-transform: rotate(270deg) translate(7.92px, 0px);
-  transform: rotate(270deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(270deg) translate(8px, 0px);
+  transform: rotate(270deg) translate(8px, 0px);
 }
 
 .om-loading-line-10 {
@@ -1159,8 +1146,8 @@ h6 {
   animation: opacity-10 1.25s linear infinite;
 }
 .om-loading-line-10:before {
-  -webkit-transform: rotate(300deg) translate(7.92px, 0px);
-  transform: rotate(300deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(300deg) translate(8px, 0px);
+  transform: rotate(300deg) translate(8px, 0px);
 }
 
 .om-loading-line-11 {
@@ -1168,8 +1155,8 @@ h6 {
   animation: opacity-11 1.25s linear infinite;
 }
 .om-loading-line-11:before {
-  -webkit-transform: rotate(330deg) translate(7.92px, 0px);
-  transform: rotate(330deg) translate(7.92px, 0px);
+  -webkit-transform: rotate(330deg) translate(8px, 0px);
+  transform: rotate(330deg) translate(8px, 0px);
 }
 
 @-webkit-keyframes opacity-0 {
@@ -1500,9 +1487,6 @@ h6 {
   height: 44px;
   line-height: 44px;
   padding: 0 10px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   border-top: 1px solid #eee;
 }
 .om-actionsheet .om-actionsheet-cnt li:first-child {
@@ -1525,6 +1509,39 @@ h6 {
 }
 .om-actionsheet.om-actionsheet-active {
   transform: translateY(0px);
+}
+
+/*poptips*/
+.om-poptips-top, .om-poptips-btm {
+  position: fixed;
+  left: 50%;
+  margin-left: -150px;
+  z-index: 1000;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.om-poptips-top {
+  top: 0;
+  transform: translateY(-40px);
+  transition: transform .3s;
+}
+.om-poptips-top.om-poptips-active {
+  transform: translateY(0);
+}
+
+.om-poptips-btm {
+  bottom: 100px;
+  display: none;
+}
+.om-poptips-btm.om-poptips-active {
+  display: block;
 }
 
 /*# sourceMappingURL=omui.css.map */

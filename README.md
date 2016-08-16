@@ -594,6 +594,7 @@ table-cell布局
 
 ### 1.弹窗 ###
 
+	/*html*/
 	<div class="om-popup" id="sure">
         <div class="om-popup-title">温馨提示</div>
         <div class="om-popup-cont">确定要执行此操作吗？</div>
@@ -610,6 +611,7 @@ table-cell布局
         </div>
     </div>
 
+	/*js*/
 	<script>
 	    function popup(elem){
 	        var _popup_id = elem.getAttribute('data-id'),
@@ -636,6 +638,7 @@ table-cell布局
 
 ### 2.菜单actionsheet ###
 
+	/*html*/
 	<div class="om-actionsheet">
         <ul class="om-actionsheet-cnt">
             <li class="om-actionsheet-header">分享到其他平台</li>
@@ -645,6 +648,8 @@ table-cell布局
         </ul>
         <a href="#" class="om-actionsheet-cancel">取 消</a>
     </div>
+	
+	/*js*/
 	<script>
 	    function actionsheet(){
 	        var _sheet = document.querySelector('.om-actionsheet'),
@@ -658,5 +663,35 @@ table-cell布局
 	                _mask.style.display = "none";
 	            },200)
 	        }
+	    }
+	</script>
+
+### 3.浮层提示框 ###
+	
+	/*html*/
+	<div class="om-poptips-top">这里是顶部提示</div>
+    <div class="om-poptips-btm">这里是底部提示</div>
+
+	/*js*/
+	<script>
+	    function poptipsTop(tips){
+	        var _poptop = document.querySelector('.om-poptips-top');
+	        poptipsCnt(_poptop,'om-poptips-top',tips);
+	    }
+	    function poptipsBtm(tips){
+	        var _popbtm = document.querySelector('.om-poptips-btm');
+	        poptipsCnt(_popbtm,'om-poptips-btm',tips);
+	    }
+	    function poptipsCnt(elem,pop,tips){
+	        if(!elem){
+	            elem = document.createElement('div');
+	            elem.class = pop;
+	            body.appendChild(elem);
+	        }
+	        elem.innerHTML = tips;
+	        elem.classList.add('om-poptips-active');
+	        setTimeout(function(){
+	            elem.classList.remove('om-poptips-active');
+	        },2000);
 	    }
 	</script>
