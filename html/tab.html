@@ -6,7 +6,6 @@
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>omui</title>
     <link rel="apple-touch-icon" sizes="144x144" href="../img/touch/omw-144×144.png">
@@ -36,12 +35,87 @@
 </footer>
 <section class="om-container">
     <div class="om-layout">
-
+        <div class="om-tab">
+            <ul class="om-tab-nav">
+                <li class="om-tab-active">新闻</li>
+                <li>娱乐</li>
+                <li>财经</li>
+            </ul>
+            <ul class="om-tab-cnt">
+                <li class="om-tab-active">
+                    <ul class="om-list-box om-list-article">
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是新闻列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>3天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>7613次</span>
+                                <i class="iconfont icon-heart-full"></i><span>146次</span>
+                            </div>
+                        </li>
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是新闻列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>3天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>7613次</span>
+                                <i class="iconfont icon-heart-full"></i><span>146次</span>
+                            </div>
+                        </li>
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是新闻列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>3天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>7613次</span>
+                                <i class="iconfont icon-heart-full"></i><span>146次</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="om-list-box om-list-article">
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是娱乐列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>2天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>2013次</span>
+                                <i class="iconfont icon-heart-full"></i><span>736次</span>
+                            </div>
+                        </li>
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是娱乐列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>2天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>2013次</span>
+                                <i class="iconfont icon-heart-full"></i><span>736次</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="om-list-box om-list-article">
+                        <li class="om-list">
+                            <img src="../img/img/img2.jpg" class="om-list-img"/>
+                            <div class="om-list-title">这里是财经列表的标题，超出会显示省略号</div>
+                            <div class="om-list-disc">
+                                <i class="iconfont icon-time"></i><span>1天前</span>
+                                <i class="iconfont icon-eye-full"></i><span>1317次</span>
+                                <i class="iconfont icon-heart-full"></i><span>236次</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </section>
 
+<script src="../src/js/omui.js"></script>
 <script>
-
+    om.tab();
 </script>
 </body>
 </html>

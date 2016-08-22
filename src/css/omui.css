@@ -1544,4 +1544,29 @@ h6 {
   display: block;
 }
 
+/*tab*/
+.om-tab .om-tab-nav {
+  display: table;
+}
+.om-tab .om-tab-nav > li {
+  display: table-cell;
+  width: 1%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.om-tab .om-tab-nav > li.om-tab-active {
+  border-bottom: 3px solid #f78a24;
+  color: #f78a24;
+}
+.om-tab .om-tab-cnt {
+  padding-top: 10px;
+}
+.om-tab .om-tab-cnt > li {
+  display: none;
+}
+.om-tab .om-tab-cnt > li.om-tab-active {
+  display: block;
+}
+
 /*# sourceMappingURL=omui.css.map */

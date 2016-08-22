@@ -6,7 +6,6 @@
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>omui</title>
     <link rel="apple-touch-icon" sizes="144x144" href="../img/touch/omw-144×144.png">
@@ -38,32 +37,11 @@
     <div class="om-poptips-top"></div>
     <div class="om-poptips-btm"></div>
     <div class="om-layout">
-        <button class="om-btn-b om-btn-default" onclick="poptipsTop('这是顶部提示')">顶部提示</button>
-        <button class="om-btn-b om-btn-default" onclick="poptipsBtm('这是底部提示')">底部提示</button>
+        <button class="om-btn-b om-btn-default" onclick="om.poptips('这是顶部提示','top')">顶部提示</button>
+        <button class="om-btn-b om-btn-default" onclick="om.poptips('这是底部提示')">底部提示</button>
     </div>
 </section>
 
-<script>
-    function poptipsTop(tips){
-        var _poptop = document.querySelector('.om-poptips-top');
-        poptipsCnt(_poptop,'om-poptips-top',tips);
-    }
-    function poptipsBtm(tips){
-        var _popbtm = document.querySelector('.om-poptips-btm');
-        poptipsCnt(_popbtm,'om-poptips-btm',tips);
-    }
-    function poptipsCnt(elem,pop,tips){
-        if(!elem){
-            elem = document.createElement('div');
-            elem.class = pop;
-            body.appendChild(elem);
-        }
-        elem.innerHTML = tips;
-        elem.classList.add('om-poptips-active');
-        setTimeout(function(){
-            elem.classList.remove('om-poptips-active');
-        },2000);
-    }
-</script>
+<script src="../src/js/omui.js"></script>
 </body>
 </html>

@@ -1122,3 +1122,29 @@ h6{font-size: 12px;}
         display: block;
     }
 }
+/*tab*/
+.om-tab{
+    .om-tab-nav{
+        display: table;
+        > li{
+            display: table-cell;
+            width: 1%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            &.om-tab-active{
+                border-bottom: 3px solid $color;
+                color: $color;
+            }
+        }
+    }
+    .om-tab-cnt{
+        padding-top: 10px;
+        > li{
+            display: none;
+            &.om-tab-active{
+                display: block;
+            }
+        }
+    }
+}

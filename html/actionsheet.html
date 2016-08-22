@@ -6,7 +6,6 @@
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>omui</title>
     <link rel="apple-touch-icon" sizes="144x144" href="../img/touch/omw-144×144.png">
@@ -31,7 +30,7 @@
     <div class="om-mask"></div>
     <div class="om-title">菜单</div>
     <div class="om-layout">
-        <button class="om-btn-b om-btn-default" onclick="actionsheet()">actionsheet</button>
+        <button class="om-btn-b om-btn-default" onclick="om.actionsheet()">actionsheet</button>
     </div>
     <div class="om-actionsheet">
         <ul class="om-actionsheet-cnt">
@@ -44,20 +43,6 @@
     </div>
 </section>
 
-<script>
-    function actionsheet(){
-        var _sheet = document.querySelector('.om-actionsheet'),
-            _mask = document.querySelector('.om-mask'),
-            _cancel = document.querySelector('.om-actionsheet-cancel');
-        _mask.style.display = "block";
-        _sheet.classList.add('om-actionsheet-active');
-        _cancel.onclick = function(){
-            _sheet.classList.remove('om-actionsheet-active');
-            setTimeout(function(){
-                _mask.style.display = "none";
-            },200)
-        }
-    }
-</script>
+<script src="../src/js/omui.js"></script>
 </body>
 </html>

@@ -6,7 +6,6 @@
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>omui</title>
     <link rel="apple-touch-icon" sizes="144x144" href="../img/touch/omw-144×144.png">
@@ -38,8 +37,8 @@
     <div class="om-mask"></div>
     <div class="om-title">弹框</div>
     <div class="om-layout">
-        <button class="om-btn-b om-btn-default" onclick="popup(this)" data-id="tips">弹出提示框</button>
-        <button class="om-btn-b om-btn-default" onclick="popup(this)" data-id="sure">弹出确认框</button>
+        <button class="om-btn-b om-btn-default" onclick="om.popup({elem:'#tips'})">弹出提示框</button>
+        <button class="om-btn-b om-btn-default" onclick="om.popupConfirm()">弹出确认框</button>
     </div>
 
     <div class="om-popup" id="sure">
@@ -58,29 +57,6 @@
         </div>
     </div>
 </section>
-
-<script>
-    function popup(elem){
-        var _popup_id = elem.getAttribute('data-id'),
-            _mask = document.querySelector('.om-mask'),
-            _popup = document.getElementById(_popup_id),
-            _btn_cancel = _popup.querySelector('.om-popup-btn-cancel'),
-            _btn_sure = _popup.querySelector('.om-popup-btn-sure');
-        _mask.style.display = "block";
-        _popup.style.display = "block";
-        if(_btn_cancel){
-            _btn_cancel.onclick = function(){
-                _mask.style.display = "none";
-                _popup.style.display = "none";
-                alert("你选择了取消！")
-            };
-        }
-        _btn_sure.onclick = function(){
-            _mask.style.display = "none";
-            _popup.style.display = "none";
-            alert("你选择了确定！")
-        };
-    }
-</script>
+<script src="../src/js/omui.js"></script>
 </body>
 </html>
