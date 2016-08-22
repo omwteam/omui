@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>omui</title>
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/touch/omw-144×144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/touch/omw-114×114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/touch/omw-72×72.png">
+    <link rel="apple-touch-icon" href="../img/touch/omw-57×57.png">
+    <link rel="shortcut icon" href="../img/touch/omw.png">
+    <link rel="stylesheet" href="../src/css/omui.css"/>
+    <link rel="stylesheet" href="../src/css/style.css"/>
+</head>
+<body>
+<header class="om-header om-header-default om-header-fixed">
+    <a href="javascript:history.back()" class="om-header-left">
+        <i class="iconfont icon-left"></i>
+    </a>
+    <h1 class="om-header-title">omui框架</h1>
+    <a href="../index.html" class="om-header-right">
+        <i class="iconfont icon-home"></i>
+    </a>
+</header>
+<footer class="om-footer om-footer-fixed">
+    <div class="om-grid-row om-grid-center">
+        <a href="../index.html" class="om-grid-col-33">基础样式</a>
+        <a href="ui.html" class="om-grid-col-33">UI组件</a>
+        <a href="js.html" class="om-grid-col-33 om-footer-on">js组件</a>
+    </div>
+</footer>
+<section class="om-container">
+    <div class="om-mask"></div>
+    <div class="om-title">侧边栏</div>
+    <div class="om-layout">
+        <button class="om-btn-b om-btn-default" onclick="om.sidebar()">左侧边栏</button>
+        <button class="om-btn-b om-btn-default" onclick="om.sidebar('right')">右侧边栏</button>
+    </div>
+
+    <div class="om-sidebar om-sidebar-left">
+        <div class="om-sidebar-cnt">
+            <ul class="om-list-box">
+                <li class="om-list">个人中心</li>
+                <li class="om-list">清除缓存</li>
+                <li class="om-list">数据统计</li>
+                <li class="om-list">个性设置</li>
+            </ul>
+        </div>
+        <div class="om-sidebar-mask"></div>
+    </div>
+    <div class="om-sidebar om-sidebar-right">
+        <div class="om-sidebar-mask"></div>
+        <div class="om-sidebar-cnt">
+            <ul class="om-list-box">
+                <li class="om-list">个人中心</li>
+                <li class="om-list">清除缓存</li>
+                <li class="om-list">数据统计</li>
+                <li class="om-list">个性设置</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script src="../src/js/omui.js"></script>
+</body>
+</html>

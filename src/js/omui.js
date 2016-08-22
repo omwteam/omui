@@ -124,4 +124,14 @@ omui.prototype.actionsheet = function(){
     }
 };
 
+omui.prototype.sidebar = function(option){
+    var _offset = (option==='left'||option==='right')?option:'left';
+    _sidebar = document.querySelector('.om-sidebar-'+_offset),
+        _mask = _sidebar.querySelector('.om-sidebar-mask');
+    _sidebar.classList.add('om-sidebar-active');
+    _mask.onclick = function(){
+        _sidebar.classList.remove('om-sidebar-active');
+    }
+};
+
 var om = new omui();

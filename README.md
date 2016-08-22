@@ -594,7 +594,9 @@ table-cell布局
 
 ### 1.弹窗 ###
 
-	/*html*/
+	<button class="om-btn-b om-btn-default" onclick="om.popup({elem:'#tips'})">弹出提示框</button>
+    <button class="om-btn-b om-btn-default" onclick="om.popupConfirm()">弹出确认框</button>
+
 	<div class="om-popup" id="sure">
         <div class="om-popup-title">温馨提示</div>
         <div class="om-popup-cont">确定要执行此操作吗？</div>
@@ -611,30 +613,12 @@ table-cell布局
         </div>
     </div>
 
-	/*js*/
-	<script>
-	    function popup(elem){
-	        var _popup_id = elem.getAttribute('data-id'),
-	            _mask = document.querySelector('.om-mask'),
-	            _popup = document.getElementById(_popup_id),
-	            _btn_cancel = _popup.querySelector('.om-popup-btn-cancel'),
-	            _btn_sure = _popup.querySelector('.om-popup-btn-sure');
-	        _mask.style.display = "block";
-	        _popup.style.display = "block";
-	        if(_btn_cancel){
-	            _btn_cancel.onclick = function(){
-	                _mask.style.display = "none";
-	                _popup.style.display = "none";
-	                alert("你选择了取消！")
-	            };
-	        }
-	        _btn_sure.onclick = function(){
-	            _mask.style.display = "none";
-	            _popup.style.display = "none";
-	            alert("你选择了确定！")
-	        };
-	    }
-	</script>
+	om.popupConfirm({
+		elem:'.om-popup', //默认弹框元素
+		sure: function(){console.log("执行确定")},  	//执行确定方法
+        cancel: function(){console.log("执行取消")},  //执行取消方法
+	})
+
 
 ### 2.菜单actionsheet ###
 
