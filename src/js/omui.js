@@ -15,8 +15,8 @@ var omui = function(){
 omui.prototype.poptips = function(tips,offset){
     var defaults = {
         elem: '',
-        offset: offset?offset:'bottom',
-        tips: tips,
+        offset: (offset==='top')?offset:'bottom',
+        tips: tips?tips:'提示',
         pop: ''
     };
     if(defaults.offset == 'bottom'){
@@ -29,7 +29,7 @@ omui.prototype.poptips = function(tips,offset){
     if(!defaults.elem){
         defaults.elem = document.createElement('div');
         defaults.elem.classList.add(defaults.pop);
-        body.appendChild(defaults.elem);
+        document.body.appendChild(defaults.elem);
     }
     defaults.elem.innerHTML = defaults.tips;
     defaults.elem.classList.add('om-poptips-active');
@@ -38,9 +38,12 @@ omui.prototype.poptips = function(tips,offset){
     },2000);
 };
 
-omui.prototype.tab = function(){
-    var nav = document.querySelectorAll('.om-tab-nav > li'),
-        cnt = document.querySelectorAll('.om-tab-cnt > li'),
+omui.prototype.tab = function(elem){
+        elem = elem?elem:'.om-tab';
+    var elems = document.querySelector(elem);
+        elems = elems?elems:document.querySelector('.om-tab');
+    var nav = elems.querySelectorAll('.om-tab-nav > li'),
+        cnt = elems.querySelectorAll('.om-tab-cnt > li'),
         i = 0,
         len = nav.length;
     for(i = 0; i < len; i ++){
@@ -125,12 +128,17 @@ omui.prototype.actionsheet = function(){
 };
 
 omui.prototype.sidebar = function(option){
-    var _offset = (option==='left'||option==='right')?option:'left';
-    _sidebar = document.querySelector('.om-sidebar-'+_offset),
-        _mask = _sidebar.querySelector('.om-sidebar-mask');
+    var _offset = (option==='right')?option:'left',
+        _sidebar = document.querySelector('.om-sidebar-'+_offset),
+        _mask = document.querySelector('.om-mask');
+
     _sidebar.classList.add('om-sidebar-active');
+    _mask.style.display = "block";
     _mask.onclick = function(){
         _sidebar.classList.remove('om-sidebar-active');
+        setTimeout(function(){
+            _mask.style.display = "none";
+        },300)
     }
 };
 

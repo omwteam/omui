@@ -1572,17 +1572,19 @@ h6 {
 /*sidebar*/
 .om-sidebar {
   position: fixed;
-  left: 0;
   top: 0;
-  width: 100%;
+  width: 75%;
   height: 100%;
-  z-index: 1000;
+  z-index: 1005;
+  background: #fff;
   transition: transform .3s;
 }
 .om-sidebar.om-sidebar-left {
+  left: 0;
   transform: translate3d(-100%, 0, 0);
 }
 .om-sidebar.om-sidebar-right {
+  right: 0;
   transform: translate3d(100%, 0, 0);
 }
 .om-sidebar.om-sidebar-active {
@@ -1590,15 +1592,8 @@ h6 {
 }
 .om-sidebar .om-sidebar-cnt {
   float: left;
-  width: 75%;
+  width: 100%;
   height: 100%;
-  background: #fff;
-}
-.om-sidebar .om-sidebar-mask {
-  float: left;
-  width: 25%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
 }
 
 /*# sourceMappingURL=omui.css.map */
