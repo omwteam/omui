@@ -594,7 +594,9 @@ table-cell布局
 
 ### 1.弹窗 ###
 
-	<button class="om-btn-b om-btn-default" onclick="om.popup({elem:'#tips'})">弹出提示框</button>
+确认取消框
+
+	
     <button class="om-btn-b om-btn-default" onclick="om.popupConfirm()">弹出确认框</button>
 
 	<div class="om-popup" id="sure">
@@ -605,7 +607,19 @@ table-cell布局
             <a href="javascript:;" class="om-popup-btn-sure">确 定</a>
         </div>
     </div>
-    <div class="om-popup" id="tips">
+    
+	/*js*/
+	om.popupConfirm({
+		elem:'.om-popup',                            //默认弹框元素
+		sure: function(){console.log("执行确定")},    //执行确定方法
+        cancel: function(){console.log("执行取消")},  //执行取消方法
+	})
+
+提示弹框
+
+	<button class="om-btn-b om-btn-default" onclick="om.popup({elem:'#tips'})">弹出提示框</button>
+
+	<div class="om-popup" id="tips">
         <div class="om-popup-title">温馨提示</div>
         <div class="om-popup-cont">已经执行完毕</div>
         <div class="om-popup-btn-div">
@@ -613,16 +627,16 @@ table-cell布局
         </div>
     </div>
 
-	om.popupConfirm({
-		elem:'.om-popup', //默认弹框元素
-		sure: function(){console.log("执行确定")},  	//执行确定方法
-        cancel: function(){console.log("执行取消")},  //执行取消方法
+	/*js*/
+	om.popup({
+		elem:'.om-popup',                          //默认弹框元素
+		sure:function(){console.log("执行确定")},  	//执行确定方法
 	})
-
 
 ### 2.菜单actionsheet ###
 
-	/*html*/
+	<button class="om-btn-b om-btn-default" onclick="om.actionsheet()">actionsheet</button>
+
 	<div class="om-actionsheet">
         <ul class="om-actionsheet-cnt">
             <li class="om-actionsheet-header">分享到其他平台</li>
@@ -632,50 +646,67 @@ table-cell布局
         </ul>
         <a href="#" class="om-actionsheet-cancel">取 消</a>
     </div>
-	
-	/*js*/
-	<script>
-	    function actionsheet(){
-	        var _sheet = document.querySelector('.om-actionsheet'),
-	            _mask = document.querySelector('.om-mask'),
-	            _cancel = document.querySelector('.om-actionsheet-cancel');
-	        _mask.style.display = "block";
-	        _sheet.classList.add('om-actionsheet-active');
-	        _cancel.onclick = function(){
-	            _sheet.classList.remove('om-actionsheet-active');
-	            setTimeout(function(){
-	                _mask.style.display = "none";
-	            },200)
-	        }
-	    }
-	</script>
+
 
 ### 3.浮层提示框 ###
 	
-	/*html*/
+	<button class="om-btn-b om-btn-default" onclick="om.poptips('这是顶部提示','top')">顶部提示</button>
+    <button class="om-btn-b om-btn-default" onclick="om.poptips('这是底部提示')">底部提示</button>
+
 	<div class="om-poptips-top">这里是顶部提示</div>
     <div class="om-poptips-btm">这里是底部提示</div>
 
 	/*js*/
+	om.poptips(tips,offset);
+	@param tips 提示语(非必填) 默认“提示”
+	@param offset 提示位置(非必填),默认bottom(可选top,bottom)
+
+### 4.选项卡 ###
+	
+	<div class="om-tab">
+		<ul class="om-tab-nav">
+	        <li class="om-tab-active">新闻</li>
+	        <li>娱乐</li>
+	        <li>财经</li>
+	    </ul>
+        <ul class="om-tab-cnt">
+            <li class="om-tab-active">新闻内容</li>
+            <li>娱乐内容</li>
+            <li>财经内容</li>
+        </ul>
+	</div>
+
 	<script>
-	    function poptipsTop(tips){
-	        var _poptop = document.querySelector('.om-poptips-top');
-	        poptipsCnt(_poptop,'om-poptips-top',tips);
-	    }
-	    function poptipsBtm(tips){
-	        var _popbtm = document.querySelector('.om-poptips-btm');
-	        poptipsCnt(_popbtm,'om-poptips-btm',tips);
-	    }
-	    function poptipsCnt(elem,pop,tips){
-	        if(!elem){
-	            elem = document.createElement('div');
-	            elem.class = pop;
-	            body.appendChild(elem);
-	        }
-	        elem.innerHTML = tips;
-	        elem.classList.add('om-poptips-active');
-	        setTimeout(function(){
-	            elem.classList.remove('om-poptips-active');
-	        },2000);
-	    }
+		om.tab();
 	</script>
+	
+	/*js*/
+	om.tab(elem);
+	@param elem 选项卡元素(非必填) 默认.om-tab 
+	
+### 5.侧边栏 ###
+
+	<button class="om-btn-b om-btn-default" onclick="om.sidebar()">左侧边栏</button>
+    <button class="om-btn-b om-btn-default" onclick="om.sidebar('right')">右侧边栏</button>
+
+	<div class="om-sidebar om-sidebar-left">
+        <div class="om-sidebar-cnt">
+            <ul class="om-list-box">
+                <li class="om-list">个人中心</li>
+                ...
+            </ul>
+        </div>
+    </div>
+    <div class="om-sidebar om-sidebar-right">
+        <div class="om-sidebar-cnt">
+            <ul class="om-list-box">
+                <li class="om-list">个人中心</li>
+                ...
+            </ul>
+        </div>
+    </div>
+
+	/*js*/
+	om.sidebar(option)
+	@param option 方向(非必填) 默认left (可选left,right)
+	
