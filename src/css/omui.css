@@ -6,6 +6,10 @@
   list-style: none;
 }
 
+body {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -1594,6 +1598,64 @@ h6 {
   float: left;
   width: 100%;
   height: 100%;
+}
+
+/*slider*/
+.om-slider-wrap {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: box;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.om-slider-wrap .om-slider {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: box;
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  overflow: hidden;
+}
+.om-slider-wrap .om-slider img {
+  width: 100%;
+}
+.om-slider-wrap .om-slider .om-slider-title {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  color: #fff;
+  text-align: left;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.om-slider-wrap .om-pagination {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  line-height: 1;
+  text-align: center;
+}
+.om-slider-wrap .om-pagination span {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #fff;
+  margin: 0 3px;
+  vertical-align: middle;
+}
+.om-slider-wrap .om-pagination span.active {
+  background: #f78a24;
 }
 
 /*# sourceMappingURL=omui.css.map */
