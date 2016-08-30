@@ -710,3 +710,36 @@ table-cell布局
 	om.sidebar(option)
 	@param option 方向(非必填) 默认left (可选left,right)
 	
+### 6.轮播图 ###
+
+
+	<div class="om-slider-wrap">
+        <ul>
+            <li class="om-slider">
+                <img src="../img/img/1.jpg" />
+            </li>
+            <li class="om-slider">
+                <img src="../img/img/2.jpg" />
+            </li>
+            <li class="om-slider">
+                <img src="../img/img/3.jpg" />
+            </li>
+        </ul>
+    </div>
+
+	/*js*/
+	om.slider({
+        elem: '.om-slider-wrap',
+        loop: true,
+        autoPlay:true,
+		autoTime:5000,
+        speed: 300,
+        pagination:true,
+        title:true
+    })
+	@param loop 是否循环
+	@param autoPlay 是否自动播放
+	@param autoTime 自动轮播时间间隔
+	@param speed 动画过渡时间
+	@param pagination 是否显示状态点
+	@param title 是否显示标题

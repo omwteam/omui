@@ -12,6 +12,11 @@ var omui = function(){
         Object.extend();
     }
 };
+
+/* 浮层提示框
+ * @param tips 提示语
+ * @param offset 提示框位置(bottom/top)
+ */
 omui.prototype.poptips = function(tips,offset){
     var defaults = {
         elem: '',
@@ -38,6 +43,9 @@ omui.prototype.poptips = function(tips,offset){
     },2000);
 };
 
+/* 选项卡
+ * @param elem 选项卡元素
+ */
 omui.prototype.tab = function(elem){
         elem = elem?elem:'.om-tab';
     var elems = document.querySelector(elem);
@@ -59,6 +67,11 @@ omui.prototype.tab = function(elem){
     }
 };
 
+/* Confirm弹窗
+ * @param elem 弹窗元素
+ * @function sure 确定函数
+ * @function cancel 取消函数
+ */
 omui.prototype.popupConfirm = function(option){
     var defaults = {
             elem: '.om-popup',
@@ -89,6 +102,10 @@ omui.prototype.popupConfirm = function(option){
     };
 };
 
+/* 弹窗
+ * @param elem 弹窗元素
+ * @function sure 确定函数
+ */
 omui.prototype.popup = function(option){
     var defaults = {
         elem: '.om-popup',
@@ -113,6 +130,7 @@ omui.prototype.popup = function(option){
     };
 };
 
+/* 底部菜单 */
 omui.prototype.actionsheet = function(){
     var _sheet = document.querySelector('.om-actionsheet'),
         _mask = document.querySelector('.om-mask'),
@@ -127,8 +145,11 @@ omui.prototype.actionsheet = function(){
     }
 };
 
-omui.prototype.sidebar = function(option){
-    var _offset = (option==='right')?option:'left',
+/* 侧边栏
+ * @param offset 侧边方向(left\right)
+ */
+omui.prototype.sidebar = function(offset){
+    var _offset = (offset==='right')?offset:'left',
         _sidebar = document.querySelector('.om-sidebar-'+_offset),
         _mask = document.querySelector('.om-mask');
 
@@ -141,6 +162,15 @@ omui.prototype.sidebar = function(option){
         },300)
     }
 };
+/* 轮播图
+ * @param elem 轮播图元素
+ * @param loop 是否循环
+ * @param autoPlay 是否自动轮播
+ * @param autoTime 自动轮播时间间隔
+ * @param speed 动画过渡时间
+ * @param pagination 是否显示状态点
+ * @param title 是否显示标题
+ */
 omui.prototype.slider = function(options){
     return new sliderFunc(options);
 };
@@ -174,9 +204,11 @@ var sliderFunc = function(options) {
     this.bindEvent();
 };
 sliderFunc.prototype.init = function() {
-    this.wrapWidth = this.wrap.offsetWidth;
-    this.wrapInner.style.width = this.wrapWidth + 'px';
-    this.wrapInner.style.height = this.lists[0].querySelector('img').height + 'px';
+    var _this=this,resizeTimer = null;
+    _this.wrapInner.style.height = _this.lists[0].querySelector('img').height + 'px';
+    this.lists[1].querySelector('img').onload = function(){
+        _this.wrapInner.style.height = _this.lists[1].querySelector('img').height + 'px';
+    };
     this.index = 0;
     //初始化lists值
     for (var i = 0; i < this.listLength; i++) {
@@ -196,18 +228,16 @@ sliderFunc.prototype.init = function() {
         this.autoPlay();
     }
     //窗口大小初始化方法
-    var _this=this,resizeTimer = null;
     window.onresize = function(){
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function(){
-            _this.resizeInit();
-        },300);
+                _this.resizeInit();
+        },10);
     };
 };
 sliderFunc.prototype.resizeInit = function(){
     this.wrapWidth = this.wrap.offsetWidth;
     this.wrapInner.style.width = this.wrapWidth + 'px';
-    this.wrapInner.style.height = this.lists[0].querySelector('img').height + 'px';
     for (var i = 0; i < this.listLength; i++) {
         this.lists[i].style.width=this.wrapWidth+'px';
         if(this.index>i){
@@ -216,6 +246,7 @@ sliderFunc.prototype.resizeInit = function(){
             this.Transform3d(this.lists[i],this.wrapWidth,false);
         }
     }
+    this.wrapInner.style.height = this.lists[1].querySelector('img').height + 'px';
 };
 //copy首尾lists
 sliderFunc.prototype.copyLists = function(){

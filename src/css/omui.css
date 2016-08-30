@@ -7,7 +7,7 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -430,7 +430,7 @@ h6 {
 }
 
 /*txtcut*/
-.om-ellipsis, .om-header .om-header-title, .om-list-box .om-list-title, .om-list-box .om-list-disc, .om-actionsheet .om-actionsheet-cnt li, .om-poptips-top, .om-poptips-btm {
+.om-ellipsis, .om-header .om-header-title, .om-list-box .om-list-title, .om-list-box .om-list-disc, .om-actionsheet .om-actionsheet-cnt li, .om-poptips-top, .om-poptips-btm, .om-slider-wrap .om-slider .om-slider-title {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1610,6 +1610,9 @@ h6 {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.om-slider-wrap ul {
+  width: 100%;
+}
 .om-slider-wrap .om-slider {
   width: 100%;
   position: absolute;
@@ -1628,7 +1631,6 @@ h6 {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
   height: 30px;
   line-height: 30px;
   padding: 0 10px;
