@@ -117,10 +117,10 @@ h6{font-size: 12px;}
 /*icon*/
 @font-face {
     font-family: 'iconfont';
-    src: url('//at.alicdn.com/t/font_1470454865_9598858.eot'),
-    url('//at.alicdn.com/t/font_1470454865_9598858.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1470454865_9598858.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1470454865_9598858.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1473128682_1328647.eot'),
+    url('//at.alicdn.com/t/font_1473128682_1328647.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1473128682_1328647.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1473128682_1328647.svg#iconfont') format('svg');
 }
 .iconfont {
     font-family:"iconfont" !important;
@@ -182,6 +182,7 @@ h6{font-size: 12px;}
 .icon-radio-check:before { content: "\e633"; }
 .icon-cate:before { content: "\e630"; }
 .icon-cate-full:before { content: "\e631"; }
+.icon-add:before { content: "\e62e"; }
 /*layout*/
 .om-layout{
     padding:10px 10px 0;
