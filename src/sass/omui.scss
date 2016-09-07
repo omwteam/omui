@@ -238,8 +238,8 @@ h6{font-size: 12px;}
 .om-header{
     position: relative;
     width: 100%;
-    height: 49px;
-    line-height: 49px;
+    height: 45px;
+    line-height: 45px;
     background: #e5e5e5;
     z-index: 999;
     .om-header-title{
@@ -260,7 +260,7 @@ h6{font-size: 12px;}
     }
     .om-header-left,.om-header-right{
         min-width: 40px;
-        height: 49px;
+        height: 45px;
         text-align: center;
         .iconfont{
             font-size: 20px;
@@ -293,7 +293,7 @@ h6{font-size: 12px;}
     width: 100%;
     z-index: 1000;
     ~.om-container{
-        padding-top: 50px;
+        padding-top: 45px;
     }
 }
 /*footer*/
@@ -458,6 +458,39 @@ h6{font-size: 12px;}
                 border-left: 0;
             }
         }
+    }
+}
+.om-btn-c{
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    text-align: center;
+    border:1px solid #ddd;
+    border-radius: 50%;
+    color: #666;
+    font-size: 14px;
+    &.om-btn-default{
+        background: $color;
+        color: #fff;
+        border:1px solid $color;
+    }
+}
+.om-btn-i{
+    padding:0 15px;
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #666;
+    font-size: 14px;
+    .iconfont{
+        font-size: 12px;
+        margin-right: 3px;
+    }
+    &.om-btn-default{
+        background: $color;
+        color: #fff;
+        border:1px solid $color;
     }
 }
 /*form*/

@@ -453,8 +453,8 @@ h6 {
 .om-header {
   position: relative;
   width: 100%;
-  height: 49px;
-  line-height: 49px;
+  height: 45px;
+  line-height: 45px;
   background: #e5e5e5;
   z-index: 999;
 }
@@ -475,7 +475,7 @@ h6 {
 }
 .om-header .om-header-left, .om-header .om-header-right {
   min-width: 40px;
-  height: 49px;
+  height: 45px;
   text-align: center;
 }
 .om-header .om-header-left .iconfont, .om-header .om-header-right .iconfont {
@@ -510,7 +510,7 @@ h6 {
   z-index: 1000;
 }
 .om-header-fixed ~ .om-container {
-  padding-top: 50px;
+  padding-top: 45px;
 }
 
 /*footer*/
@@ -682,6 +682,41 @@ h6 {
 }
 .om-btn-group.om-btn-default .om-btn:first-child {
   border-left: 0;
+}
+
+.om-btn-c {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #666;
+  font-size: 14px;
+}
+.om-btn-c.om-btn-default {
+  background: #f78a24;
+  color: #fff;
+  border: 1px solid #f78a24;
+}
+
+.om-btn-i {
+  padding: 0 15px;
+  height: 30px;
+  line-height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  font-size: 14px;
+}
+.om-btn-i .iconfont {
+  font-size: 12px;
+  margin-right: 3px;
+}
+.om-btn-i.om-btn-default {
+  background: #f78a24;
+  color: #fff;
+  border: 1px solid #f78a24;
 }
 
 /*form*/
